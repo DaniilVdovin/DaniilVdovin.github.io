@@ -1,24 +1,24 @@
-{
-  "itmes": [
+п»ї{
+  "items": [
     {
-      "image": "images/game.jpg",
-      "title": "Это первая игра",
-      "discript": "Созданна на Unity и опубликованна в Google Play"
+      "image": "../../images/game.jpg",
+      "title": "ГќГІГ® ГЇГҐГ°ГўГ Гї ГЁГЈГ°Г ",
+      "descript": "Г‘Г®Г§Г¤Г Г­Г­Г  Г­Г  Unity ГЁ Г®ГЇГіГЎГ«ГЁГЄГ®ГўГ Г­Г­Г  Гў Google Play"
     },
     {
-      "image": "images/whois.jpg",
-      "title": "основа",
-      "discript": "Созданна на Unity и опубликованна в Google Play"
+      "image": "../../images/whois.jpg",
+      "title": "Г®Г±Г­Г®ГўГ ",
+      "descript": "Г‘Г®Г§Г¤Г Г­Г­Г  Г­Г  Unity ГЁ Г®ГЇГіГЎГ«ГЁГЄГ®ГўГ Г­Г­Г  Гў Google Play"
     },
     {
-      "image": "images/whois.jpg",
-      "title": "основа",
-      "discript": "Созданна на Unity и опубликованна в Google Play"
+      "image": "../../images/whois.jpg",
+      "title": "Г®Г±Г­Г®ГўГ ",
+      "descript": "Г‘Г®Г§Г¤Г Г­Г­Г  Г­Г  Unity ГЁ Г®ГЇГіГЎГ«ГЁГЄГ®ГўГ Г­Г­Г  Гў Google Play"
     },
     {
-      "image": "images/whois.jpg",
-      "title": "основа",
-      "discript": "Созданна на Unity и опубликованна в Google Play"
+      "image": "../../images/whois.jpg",
+      "title": "Г®Г±Г­Г®ГўГ ",
+      "descript": "Г‘Г®Г§Г¤Г Г­Г­Г  Г­Г  Unity ГЁ Г®ГЇГіГЎГ«ГЁГЄГ®ГўГ Г­Г­Г  Гў Google Play"
     }
   ]
 }
