@@ -1,11 +1,12 @@
 img.image_logo {
     filter: grayscale(1);
-    display: inline-flex;
+    display: block;
     justify-content: center;
     align-items: center;
     justify-items: center;
     width:15em;
 }
 a.logoholder{
-    display:inline-table;
+    display:flex;
+
 }
