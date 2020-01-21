@@ -1,18 +1,16 @@
 * {
-   #user-select: none
+   user-select: none
 }
 a.logoholder {
     display: flex;
     align-items: center;
     justify-content: center;
-    justify-items: center;
-    overflow:hidden;
 }
 
 .image_logo {
     overflow:auto;
     filter: grayscale(1);
-    display: block;
+    display: grid;
     justify-content: center;
     align-items: center;
     justify-items: center;
@@ -22,55 +20,15 @@ a.logoholder {
     white-space:pre-wrap;
     vertical-align:top;
 }
-
-
-.boxx {
-    width: 155%;
-    height: 500px;
-    background-color: black;
-    position: fixed;
-    top: 0;
-    left: -55%;
-    padding-left: 55%;
-    z-index: 5;
-    transition: all .5s ease-in;
-    transform: rotate(-90deg);
-    transform-origin: 0% 0%;
-    overflow: hidden;
+.carousel .reel {
+    padding: 0 0.5em 0 0.5em;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    white-space: nowrap;
+    vertical-align: top;
 }
 
-    .boxx.asd {
-        transform: rotate(0deg);
-        transform-origin: 0% 0%;
-    }
-
-    .boxx > li {
-        #padding-top: 0.5em;
-        display: block;
-        #border-bottom: 1px solid;
-        #border-color: #000;
-        #display: box;
-    }
-
-        .boxx > li > * {
-            display: inline-block;
-            max-width: 100%;
-            margin: 14px 28px 14px;
-        }
-
-.kuda {
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 6px;
-    color: #fff;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: all 0.2s;
-}
-
-    .kuda:hover {
-        text-shadow: 0 0 10px white;
-    }
 
 
 
