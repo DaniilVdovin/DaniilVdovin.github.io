@@ -15,6 +15,7 @@ a.logoholder {
     justify-items: center;
     white-space:nowrap;
     vertical-align:top;
+    overflow: hidden;
 }
 img.image_logo {
     filter: grayscale(1);
@@ -23,6 +24,7 @@ img.image_logo {
     align-items: center;
     justify-items: center;
     width: 15em;
+    overflow:auto;
 }
 
 .boxx {

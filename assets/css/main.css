@@ -2558,20 +2558,21 @@ input, select, textarea {
 			padding: 0 2em 0 2em;
 		}
 
-		.carousel article {
-			display: inline-block;
-			width: 18em;
-			background: #fff;
-			text-align: center;
-			padding: 0 1em 3em 1em;
-			margin: 0 2em 0 0;
-			white-space: normal;
-			opacity: 1.0;
-			-moz-transition: opacity 0.75s ease-in-out;
-			-webkit-transition: opacity 0.75s ease-in-out;
-			-ms-transition: opacity 0.75s ease-in-out;
-			transition: opacity 0.75s ease-in-out;
-		}
+        .carousel article {
+            display: inline-block;
+            width: 18em;
+            background: #fff;
+            text-align: center;
+            padding: 0 1em 3em 1em;
+            margin: 0 2em 0 0;
+            white-space: normal;
+            opacity: 1.0;
+            vertical-align: top;
+            -moz-transition: opacity 0.75s ease-in-out;
+            -webkit-transition: opacity 0.75s ease-in-out;
+            -ms-transition: opacity 0.75s ease-in-out;
+            transition: opacity 0.75s ease-in-out;
+        }
 
 			.carousel article.loading {
 				opacity: 0;
