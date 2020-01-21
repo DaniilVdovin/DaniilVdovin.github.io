@@ -3079,6 +3079,9 @@ input, select, textarea {
 			#main > header {
 				text-align: center;
 			}
+            #main > a {
+                display: grid;
+            }
 
 		/* Footer */
 
