@@ -18,9 +18,6 @@ a.logoholder {
     justify-items: center;
     width: 15em;
 }
-.carousel {
-    overflow-x: auto;
-}
 .carousel article {
     white-space:pre-wrap;
     vertical-align:top;
