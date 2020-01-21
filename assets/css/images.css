@@ -11,6 +11,7 @@ a.logoholder {
 
 .carousel article {
     white-space:pre-wrap;
+    vertical-align:top;
 }
 
 img .image_logo {
