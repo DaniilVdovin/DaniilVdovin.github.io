@@ -6,6 +6,17 @@ a.logoholder {
     align-items: center;
     justify-content: center;
     justify-items: center;
+    overflow:hidden;
+}
+
+.image_logo {
+    overflow:auto;
+    filter: grayscale(1);
+    display: block;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    width: 15em;
 }
 .carousel {
     overflow-x: auto;
@@ -14,16 +25,6 @@ a.logoholder {
     white-space:pre-wrap;
     vertical-align:top;
 }
-
-img.image_logo {
-    filter: grayscale(1);
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
-    width: 15em;
-}
-
 
 
 .boxx {
