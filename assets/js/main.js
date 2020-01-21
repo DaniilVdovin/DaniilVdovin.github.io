@@ -178,14 +178,14 @@
                    
                     $.getJSON('assets/data/ItemList.json', null, function (val) {
                         var Item = '<article>' +
-                            '< a href = \"#carousel\" class=\"image featured circled scrolly\" > <img src="' +
-                            val.image + '" alt=\"\" /></a >\n' +
+                            '< a href = \"#carousel\" class=\"image featured circled scrolly\" >'+
+                            '< img src = \"'+ val.image +'\" alt=\"\" /></a >\n' +
                             '<header>' +
                             '<h3><a href=\"#carousel\" class=\"circled scrolly\">' + val.title + '</a></h3>' +
                             '</header>' +
                             '<p>' + val.descript + '</p>' +
                             '</article >';
-                        $('.carousel').append(Item);
+                        $('.reel').append(Item);
                     });
     
 
