@@ -1,0 +1,10 @@
+img.image_logo {
+    filter: grayscale(1);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+}
+a.logoholder{
+    display:inline-grid;
+}
