@@ -21,8 +21,21 @@
     {
       "image": "../../images/Games/sim.jpg",
       "title": "Симулятор друга",
-      "link": "https://play.google.com/store/apps/details?id=com.DaniilVdovin.TemporaryTrap",
+      "link": "https://play.google.com/store/apps/details?id=com.daniilvdovin.simulatoroffriend",
       "descript": "Симулятор друга - это единственный в своем роде карманный друг.\n\nAndriod Studio|Google Play|AppGallery"
+    },
+    {
+      "image": "../../images/Games/sim.jpg",
+      "title": "Симулятор друга",
+      "link": "https://play.google.com/store/apps/details?id=com.daniilvdovin.simulatoroffriend",
+      "descript": "Симулятор друга - это единственный в своем роде карманный друг.\n\nAndriod Studio|Google Play|AppGallery"
+    },
+    {
+      "image": "../../images/Games/pfurs.jpg",
+      "title": "РУДН :СПО Расписание занятий",
+      "link": "https://play.google.com/store/apps/details?id=com.daniilvdovin.simulatoroffriend",
+      "descript": "Симулятор друга - это единственный в своем роде карманный друг.\n\nAndriod Studio|Google Play"
     }
-  ]
+  ]	
+
 }
