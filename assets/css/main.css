@@ -2564,10 +2564,8 @@ input, select, textarea {
             background: #fff;
             text-align: center;
             padding: 0 1em 3em 1em;
-            margin: 0 2em 0 0;
-            white-space: normal;
+            margin: 0 2em 0 0;     
             opacity: 1.0;
-            vertical-align: top;
             -moz-transition: opacity 0.75s ease-in-out;
             -webkit-transition: opacity 0.75s ease-in-out;
             -ms-transition: opacity 0.75s ease-in-out;
