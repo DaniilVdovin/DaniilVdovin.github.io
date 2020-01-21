@@ -7,5 +7,5 @@ img.image_logo {
     width:15em;
 }
 a.logoholder{
-    display:inline-grid;
+    display:inline-table;
 }
