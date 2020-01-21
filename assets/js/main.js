@@ -41,7 +41,7 @@
 		$('.scrolly').scrolly();
 
 	// Nav.
-
+    /*
 		// Button.
 			$(
 				'<div id="navButton">' +
@@ -68,7 +68,7 @@
 					target: $body,
 					visibleClass: 'navPanel-visible'
 				});
-
+    */
 	// Carousels.
 		$('.carousel').each(function() {
 
