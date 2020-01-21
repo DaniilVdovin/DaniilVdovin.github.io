@@ -1805,11 +1805,10 @@ input, select, textarea {
 			margin: 0 0 2em 0;
 		}
 
-        .image.centered img {
-                margin: 0 auto;
-                width: auto;
-        }
-         
+			.image.centered img {
+				margin: 0 auto;
+				width: auto;
+			}
 
 /* List */
 
@@ -2707,7 +2706,7 @@ input, select, textarea {
 
 /* Mobile */
 
-	#navPanel, #titleBar,.boxx{
+	#navPanel, #titleBar {
 		display: none;
 	}
 
@@ -2853,9 +2852,10 @@ input, select, textarea {
 				height: 44px;
 				left: 0;
 				position: fixed;
+
 				top: 0;
 				width: 100%;
-				z-index: 10001;
+				z-index: 100011;
 			}
 
 				#navButton .toggle {
@@ -2894,9 +2894,9 @@ input, select, textarea {
 						width: 80px;
 						height: 30px;
 						line-height: 30px;
-						position: absolute;
-						left: 50%;
-						margin-left: -40px;
+						#position: absolute;
+						#left: 50%;
+						#margin-left: -40px;
 						background: rgba(132, 128, 136, 0.75);
 						border-top: 0;
 						border-radius: 0 0 0.35em 0.35em;
@@ -2997,10 +2997,10 @@ input, select, textarea {
 			}
 
 			body.navPanel-visible #navButton {
-				-moz-transform: translateY(50vh);
-				-webkit-transform: translateY(50vh);
-				-ms-transform: translateY(50vh);
-				transform: translateY(50vh);
+				#-moz-transform: translateY(50vh);
+				#-webkit-transform: translateY(50vh);
+				#-ms-transform: translateY(50vh);
+				#transform: translateY(50vh);
 			}
 
 			body.navPanel-visible #navPanel {
@@ -3079,7 +3079,7 @@ input, select, textarea {
 			#main > header {
 				text-align: center;
 			}
-           
+
 		/* Footer */
 
 			#footer {
