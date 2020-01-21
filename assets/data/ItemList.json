@@ -1,0 +1,24 @@
+{
+  "itmes": [
+    {
+      "image": "images/game.jpg",
+      "title": "Это первая игра",
+      "discript": "Созданна на Unity и опубликованна в Google Play"
+    },
+    {
+      "image": "images/whois.jpg",
+      "title": "основа",
+      "discript": "Созданна на Unity и опубликованна в Google Play"
+    },
+    {
+      "image": "images/whois.jpg",
+      "title": "основа",
+      "discript": "Созданна на Unity и опубликованна в Google Play"
+    },
+    {
+      "image": "images/whois.jpg",
+      "title": "основа",
+      "discript": "Созданна на Unity и опубликованна в Google Play"
+    }
+  ]
+}
