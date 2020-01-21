@@ -175,19 +175,20 @@
 			// Init.
 				$window.on('load', function() {
                    
-                    var ItemHolder = $('carouselhendler');
-                    $.getJSON("assets/data/ItemList.json", function (json) {
-                        json.items.forEach(element => {
-                            var Item = '<article>' +
-                                '< a href = \"#carousel\" class=\"image featured circled scrolly\" > <img src="' + element.image + '" alt=\"\" /></a >\n' +
+                    var ItemHolder = $('.carousel');
+                    $.getJSON("assets/data/ItemList.json", null, function (json) {
+                        
+                        $.each(json.items, function (key, val) {
+                            var Item =
+                                '<article>' +
+                                '< a href = \"#carousel\" class=\"image featured circled scrolly\" > <img src="' + val.image + '" alt=\"\" /></a >\n' +
                                 '<header>' +
-                                '<h3><a href=\"#carousel\" class=\"circled scrolly\">' + element.title + '</a></h3>' +
+                                '<h3><a href=\"#carousel\" class=\"circled scrolly\">' + val.title + '</a></h3>' +
                                 '</header>' +
-                                '<p>' + element.discript + '</p>' +
+                                '<p>' + val.descript + '</p>' +
                                 '</article >';
                             ItemHolder.innerHTML(Item);
                         });
-
                     });
     
 
