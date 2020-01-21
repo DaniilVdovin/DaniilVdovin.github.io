@@ -1,13 +1,13 @@
 ﻿{
   "items": [
     {
-      "image": "../../images/4ColorShot.jpg",
+      "image": "../../images/Games/4ColorShot.jpg",
       "title": "4Color Shot",
       "link": "https://play.google.com/store/apps/details?id=com.VTeme.BoxColorShot",
       "descript": "Развивай свои способности: память, внимание, скорость реакции.\n\nUnity 3D"
     },
     {
-      "image": "../../images/LogicAlgebra.jpg",
+      "image": "../../images/Games/LogicAlgebra.jpg",
       "title": "Алгебра логики",
       "link": "https://play.google.com/store/apps/details?id=com.VTeme.BoxColorShot",
       "descript": "С помощью встроенного функционала программы можно создавать и высчитывать функцию.\n\nUnity 3D"
