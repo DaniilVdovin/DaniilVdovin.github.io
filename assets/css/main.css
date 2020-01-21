@@ -2707,7 +2707,7 @@ input, select, textarea {
 
 /* Mobile */
 
-	#navPanel, #titleBar {
+	#navPanel, #titleBar,.boxx{
 		display: none;
 	}
 
