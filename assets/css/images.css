@@ -4,6 +4,7 @@ img.image_logo {
     justify-content: center;
     align-items: center;
     justify-items: center;
+    width:15em;
 }
 a.logoholder{
     display:inline-grid;
