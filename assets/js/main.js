@@ -174,6 +174,22 @@
 
 			// Init.
 				$window.on('load', function() {
+                   
+                    var ItemHolder = $('carouselhendler');
+                    $.getJSON("assets/data/ItemList.json", function (json) {
+                        json.items.forEach(element => {
+                            var Item = '<article>' +
+                                '< a href = \"#carousel\" class=\"image featured circled scrolly\" > <img src="' + element.image + '" alt=\"\" /></a >\n' +
+                                '<header>' +
+                                '<h3><a href=\"#carousel\" class=\"circled scrolly\">' + element.title + '</a></h3>' +
+                                '</header>' +
+                                '<p>' + element.discript + '</p>' +
+                                '</article >';
+                            ItemHolder.innerHTML(Item);
+                        });
+
+                    });
+    
 
 					reelWidth = $reel[0].scrollWidth;
 
