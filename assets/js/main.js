@@ -176,9 +176,9 @@
 				$window.on('load', function() {
                    
                     $.getJSON('assets/data/ItemList.json', null, function (val) {
-                        $.each(val, function (i, item) {
-                            $.each(item, function (i, ai) {
-                                var i = '<article class="">' +
+                        $.each(val, function (i, item) {  
+                            $.each(item, function (is, ai) {
+                                var i = '<article href=\"#image'+ is +'\" class="">' +
                                     '<a href="#carousel" class="image featured circled scrolly"><img src="' + ai.image + '" alt=""></a>' +
                                     '<header>' +
                                     '<h3><a href="#carousel" class="circled scrolly">' + ai.title + '</a></h3>' +
@@ -189,7 +189,6 @@
                             });
                         });
                     });
-    
 
 					reelWidth = $reel[0].scrollWidth;
 
