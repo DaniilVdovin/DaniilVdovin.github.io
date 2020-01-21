@@ -179,9 +179,9 @@
                         $.each(val, function (i, item) {  
                             $.each(item, function (is, ai) {
                                 var i = '<article id=\"image' + is+'\" class="">' +
-                                    '<a href=\"#image' + is +'\" class="image featured circled scrolly"><img src="' + ai.image + '" alt=""></a>' +
+                                    '<a href=\"\" class="image featured circled scrolly"><img src="' + ai.image + '" alt=""></a>' +
                                     '<header>' +
-                                    '<h3><a href="#carousel" class="circled scrolly">' + ai.title + '</a></h3>' +
+                                    '<h3><a href=\"'+ai.link+'\" class="circled scrolly">' + ai.title + '</a></h3>' +
                                     '</header>' +
                                     '<p>' + ai.descript + '</p>' +
                                     '</article>';

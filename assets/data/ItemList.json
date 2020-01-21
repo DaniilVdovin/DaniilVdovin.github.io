@@ -2,63 +2,9 @@
   "items": [
     {
       "image": "../../images/game.jpg",
-      "title": "Ýòî ïåðâàÿ èãðà",
-      "descript": "Ñîçäàííà íà Unity è îïóáëèêîâàííà â Google Play"
-    },
-    {
-      "image": "../../images/whois.jpg",
-      "title": "îñíîâà",
-      "descript": "Ñîçäàííà íà Unity è îïóáëèêîâàííà â Google Play"
-    },
-    {
-      "image": "../../images/whois.jpg",
-      "title": "îñíîâà",
-      "descript": "Ñîçäàííà íà Unity è îïóáëèêîâàííà â Google Play"
-    },
-    {
-      "image": "../../images/whois.jpg",
-      "title": "îñíîâà",
-      "descript": "Ñîçäàííà íà Unity è îïóáëèêîâàííà â Google Play"
-    },
-    {
-      "image": "../../images/whois.jpg",
-      "title": "îñíîâà",
-      "descript": "Ñîçäàííà íà Unity è îïóáëèêîâàííà â Google Play"
-    },
-    {
-      "image": "../../images/whois.jpg",
-      "title": "îñíîâà",
-      "descript": "Ñîçäàííà íà Unity è îïóáëèêîâàííà â Google Play"
-    },
-    {
-      "image": "../../images/whois.jpg",
-      "title": "îñíîâà",
-      "descript": "Ñîçäàííà íà Unity è îïóáëèêîâàííà â Google Play"
-    },
-    {
-      "image": "../../images/whois.jpg",
-      "title": "îñíîâà",
-      "descript": "Ñîçäàííà íà Unity è îïóáëèêîâàííà â Google Play"
-    },
-    {
-      "image": "../../images/whois.jpg",
-      "title": "îñíîâà",
-      "descript": "Ñîçäàííà íà Unity è îïóáëèêîâàííà â Google Play"
-    },
-    {
-      "image": "../../images/whois.jpg",
-      "title": "îñíîâà",
-      "descript": "Ñîçäàííà íà Unity è îïóáëèêîâàííà â Google Play"
-    },
-    {
-      "image": "../../images/whois.jpg",
-      "title": "îñíîâà",
-      "descript": "Ñîçäàííà íà Unity è îïóáëèêîâàííà â Google Play"
-    },
-    {
-      "image": "../../images/whois.jpg",
-      "title": "îñíîâà",
-      "descript": "Ñîçäàííà íà Unity è îïóáëèêîâàííà â Google Play"
-    }
+      "title": "Игра",
+      "link": "https://play.google.com/store/apps/details?id=com.VTeme.BoxColorShot",
+      "descript": "имеется Google Play"
+    } 
   ]
 }
