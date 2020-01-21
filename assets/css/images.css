@@ -13,10 +13,12 @@ a.logoholder {
     justify-content: center;
     align-items: center;
     justify-items: center;
+    white-space:pre-wrap;
+    vertical-align:top;
 }
 img.image_logo {
     filter: grayscale(1);
-    display: block;
+    display: grid;
     justify-content: center;
     align-items: center;
     justify-items: center;
