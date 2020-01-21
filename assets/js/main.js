@@ -175,17 +175,19 @@
 			// Init.
 				$window.on('load', function() {
                    
-                   
                     $.getJSON('assets/data/ItemList.json', null, function (val) {
-                        var Item = '<article>' +
-                            '< a href = \"#carousel\" class=\"image featured circled scrolly\" >'+
-                            '< img src = \"'+ val.image +'\" alt=\"\" /></a >\n' +
-                            '<header>' +
-                            '<h3><a href=\"#carousel\" class=\"circled scrolly\">' + val.title + '</a></h3>' +
-                            '</header>' +
-                            '<p>' + val.descript + '</p>' +
-                            '</article >';
-                        $('.reel').append(Item);
+                        $.each(val, function (i, item) {
+                            $.each(item, function (i, ai) {
+                                var i = '<article class="">' +
+                                    '<a href="#carousel" class="image featured circled scrolly"><img src="' + ai.image + '" alt=""></a>' +
+                                    '<header>' +
+                                    '<h3><a href="#carousel" class="circled scrolly">' + ai.title + '</a></h3>' +
+                                    '</header>' +
+                                    '<p>' + ai.descript + '</p>' +
+                                    '</article>';
+                                $('.reel').append(i);
+                            });
+                        });
                     });
     
 
