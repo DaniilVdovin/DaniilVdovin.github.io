@@ -8,7 +8,10 @@ a.logoholder {
     justify-items: center;
     
 }
-img.image_logo {
+.carousel article {
+    white-space:pre-wrap;
+}
+    img .image_logo {
     filter: grayscale(1);
     display: grid;
     justify-content: center;
