@@ -8,9 +8,6 @@ a.logoholder {
     justify-items: center;
     
 }
-.carousel .reel {
-    vertical-align:top;
-}
 img.image_logo {
     filter: grayscale(1);
     display: grid;
