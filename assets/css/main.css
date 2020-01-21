@@ -2894,9 +2894,9 @@ input, select, textarea {
 						width: 80px;
 						height: 30px;
 						line-height: 30px;
-						#position: absolute;
-						#left: 50%;
-						#margin-left: -40px;
+						position: absolute;
+						left: 50%;
+						margin-left: -40px;
 						background: rgba(132, 128, 136, 0.75);
 						border-top: 0;
 						border-radius: 0 0 0.35em 0.35em;

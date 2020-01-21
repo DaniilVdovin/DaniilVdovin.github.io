@@ -1,3 +1,6 @@
+* {
+    user-select: none
+}
 a.logoholder {
     display: flex;
     align-items: center;
@@ -14,11 +17,12 @@ img.image_logo {
     justify-items: center;
     width: 15em;
 }
+
 .boxx {
     width: 155%;
     height: 500px;
     background-color: black;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: -55%;
     padding-left: 55%;
@@ -39,7 +43,7 @@ img.image_logo {
         display: block;
         #border-bottom: 1px solid;
         #border-color: #000;
-        display: box;
+        #display: box;
     }
 
         .boxx > li > * {
