@@ -13,7 +13,7 @@ a.logoholder {
     vertical-align:top;
 }
 
-img .image_logo {
+img.image_logo {
     filter: grayscale(1);
     display: grid;
     justify-content: center;
