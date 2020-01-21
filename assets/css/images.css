@@ -7,7 +7,9 @@ a.logoholder {
     justify-content: center;
     justify-items: center;
 }
-
+.carousel {
+    overflow-x: auto;
+}
 .carousel article {
     white-space:pre-wrap;
     vertical-align:top;
