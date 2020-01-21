@@ -178,8 +178,8 @@
                     $.getJSON('assets/data/ItemList.json', null, function (val) {
                         $.each(val, function (i, item) {  
                             $.each(item, function (is, ai) {
-                                var i = '<article href=\"#image'+ is +'\" class="">' +
-                                    '<a href="#carousel" class="image featured circled scrolly"><img src="' + ai.image + '" alt=""></a>' +
+                                var i = '<article id=\"image' + is+'\" class="">' +
+                                    '<a href=\"#image' + is +'\" class="image featured circled scrolly"><img src="' + ai.image + '" alt=""></a>' +
                                     '<header>' +
                                     '<h3><a href="#carousel" class="circled scrolly">' + ai.title + '</a></h3>' +
                                     '</header>' +
