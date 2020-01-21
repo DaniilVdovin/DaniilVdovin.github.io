@@ -185,13 +185,14 @@
                                     '</header>' +
                                     '<p>' + ai.descript + '</p>' +
                                     '</article>';
-                                $('.reel').append(i);
+                                $reel.append(i);
                             });
                         });
                     });
 
 					reelWidth = $reel[0].scrollWidth;
 
+                    $t._update();
 					if (browser.mobile) {
 
 						$reel
@@ -211,10 +212,7 @@
 						$backward.show();
 
 					}
-
-					$t._update();
-                    
-                                       
+                                    
 					$window.on('resize', function() {
 						reelWidth = $reel[0].scrollWidth;
 						$t._update();
