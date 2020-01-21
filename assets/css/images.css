@@ -6,12 +6,14 @@ a.logoholder {
     align-items: center;
     justify-content: center;
     justify-items: center;
-    
+    overflow:hidden;
 }
+
 .carousel article {
     white-space:pre-wrap;
 }
-    img .image_logo {
+
+img .image_logo {
     filter: grayscale(1);
     display: grid;
     justify-content: center;
