@@ -8,7 +8,12 @@ a.logoholder {
     justify-items: center;
     
 }
-
+.carousel .reel {
+    padding: 0 0.5em 0 0.5em;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+}
 img.image_logo {
     filter: grayscale(1);
     display: block;
