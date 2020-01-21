@@ -15,6 +15,7 @@ a.logoholder {
     justify-items: center;
     white-space:nowrap;
     vertical-align:top;
+    overflow:visible;
 }
 img.image_logo {
     filter: grayscale(1);
