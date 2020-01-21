@@ -1,12 +1,15 @@
+a.logoholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
 img.image_logo {
     filter: grayscale(1);
     display: block;
     justify-content: center;
     align-items: center;
     justify-items: center;
-    width:15em;
-}
-a.logoholder{
-    display:flex;
-
+    width: 15em;
 }
