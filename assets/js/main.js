@@ -213,7 +213,10 @@
 					}
 
 					$t._update();
-
+                    
+                    reelWidth = $reel[0].scrollWidth;
+                    $t._update();
+                    
 					$window.on('resize', function() {
 						reelWidth = $reel[0].scrollWidth;
 						$t._update();
