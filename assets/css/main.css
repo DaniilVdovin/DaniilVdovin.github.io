@@ -1805,10 +1805,16 @@ input, select, textarea {
 			margin: 0 0 2em 0;
 		}
 
-			.image.centered img {
-				margin: 0 auto;
-				width: auto;
-			}
+        .image.centered img {
+                margin: 0 auto;
+                width: auto;
+        }
+        .image.image_logo {
+            display: block;
+            width: 10%;
+            height: 10%;
+            margin: 10em 10em 10em 10em;
+        }
 
 /* List */
 
@@ -3078,6 +3084,9 @@ input, select, textarea {
 			#main > header {
 				text-align: center;
 			}
+             #main > a {
+                display: grid;
+             }
 
 		/* Footer */
 
