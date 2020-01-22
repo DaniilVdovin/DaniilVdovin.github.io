@@ -1,0 +1,240 @@
+/* (1366x768) WXGA Display */
+.mapouter{position:relative;text-align:right;height:300px;width:500px; top: -100px;}
+.gmap_canvas {overflow:hidden;background:none!important;height:300px;width:500px;}
+
+.circle-diagram {
+  transform: scale(3.5);
+  margin: 80px;
+}
+
+@media only screen and (max-width: 600px) {
+  .circle-diagram {
+    transform: scale(2.5);
+    margin: 60px;
+  }
+}
+
+@media screen and (min-width: 1366px) and (max-width: 1919px) {}
+
+
+
+/* Normal desktop :992px. */
+
+@media (min-width: 992px) and (max-width: 1197px) {
+	.slider-area {
+	    height: 619px;
+	}
+}
+
+
+
+/* Normal desktop :991px. */
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.slider-area {
+	    height: 480px;
+	}
+	.about-area {
+	    padding: 90px 0px 80px;
+	}
+	.single-service{
+		padding: 0;
+	}
+	.srvc-content h4{
+		font-size: 15px;
+	}
+	.single-service .icon span:before {
+	    font-size: 37px;
+	}
+	.single-service .icon {
+	    margin-right: 11px;
+	    margin-top: 8px;
+	}
+	.single-service:before {
+	    left: 18px;
+	}
+	.single-service:after{
+		left: 13px;
+	}
+    .white_svg {
+	    bottom: -12px;
+	}
+	.service-area {
+	    padding-bottom: 120px;
+	}
+	.fortfolio-area {
+	    padding: 80px 0px 110px;
+	}
+	.contact-area {
+	    padding: 80px 0px 90px;
+	}
+	.go-to-top{
+		display: none;
+	}
+}
+
+
+
+/* small mobile :320px. */
+
+@media (max-width: 767px) {
+	.mapouter {
+		top: 0px;
+	}
+    .container {
+        width: 100%
+    }
+    .header-area {
+        padding: 10px 0px 3px;
+    }
+    .white_svg {
+	    bottom: -12px;
+	}
+}
+
+
+
+/* Large Mobile :480px. */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	.slicknav_btn {
+	    margin-top: -44px;
+	}
+	.slider-area {
+	    height: 379px;
+	}
+	.next-section{
+		display: none;
+	}
+	.slider-content h2 {
+	    font-size: 43px;
+	    line-height: 51px;
+	    margin-bottom: 0;
+	}
+	.slider-content h4 {
+	    font-size: 16px;
+	}
+	.next-section {
+	    right: -5px;
+	    bottom: 53px;
+	}
+	.about-area {
+	    padding: 80px 0px 60px;
+	}
+	.abt-content {
+	    padding-top: 70px;
+	}
+	.abt-left-thumb:before {
+	    right: -22px;
+	    bottom: -22px;
+	}
+	.service-area {
+	    padding-bottom: 30px;
+	}
+	.single-service{
+		margin-bottom: 40px;
+	}
+	.fortfolio-area {
+	    padding: 70px 0px 50px;
+	}
+	.contact-area {
+	    padding: 70px 0px 80px;
+	}
+	.cnt-left{
+		margin-bottom: 40px;
+	}
+	.contact-form form .form-submit {
+	    text-align: left;
+	}
+	.footer-area {
+	    padding: 20px 0px 13px;
+	}
+	.white_svg{
+		display: none;
+	}
+	.copyright p{
+		text-align: center;
+	}
+	.go-to-top{
+		display: none;
+	}
+
+}
+
+
+
+/* small mobile :320px. */
+
+@media (min-width: 240px) and (max-width: 479px) {
+	.logo a img {
+	    max-width: 32px;
+	}
+	.next-section{
+		display: none;
+	}
+    .abt-left-thumb:before {
+        display: none;
+    }
+    .slider-area{
+    	height: 286px;
+    }
+    .slider-content h2 {
+	    font-size: 27px;
+	    line-height: 31px;
+	    margin-bottom: 1px;
+	}
+	.slider-content h4{
+		font-size: 13px;
+		line-height: 29px;
+	}
+	.next-section {
+	    right: -24px;
+    	bottom: 44px;
+	}
+	.about-area {
+	    padding: 70px 0px 60px;
+	}
+	.abt-content {
+	    padding-top: 70px;
+	}
+	.service-area {
+	    padding-bottom: 40px;
+	}
+	.single-service{
+		margin-bottom: 40px;
+	}
+	.fortfolio-filter {
+	    text-align: center;
+	}
+	.fortfolio-area {
+	    padding: 70px 0px 60px;
+	}
+	.fortfolio-filter button{
+		margin-bottom: 10px;
+	}
+	.contact-area{
+		padding: 70px 0px;
+	}
+	.cnt-left{
+		margin-bottom: 40px;
+	}
+	.contact-form form .form-submit {
+	    text-align: center;
+	}
+	.footer-area{
+		text-align: center;
+		padding: 39px 0px 28px;
+	}
+	.flogo {
+	    margin-bottom: 18px;
+	}
+	.white_svg{
+		display: none;
+	}
+	.copyright p{
+		text-align: center;
+	}
+	.go-to-top{
+		display: none;
+	}
+}
