@@ -81,6 +81,9 @@
 	.mapouter {
 		top: 0px;
 	}
+	.gmap_canvas {
+		width: 100px;
+	}
     .container {
         width: 100%
     }
