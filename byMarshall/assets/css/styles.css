@@ -1,0 +1,708 @@
+/*-----------------------------------------------------------------------------------
+
+    Template Name: Rokstar - Portfolio Html Template
+    Template URI: rashadulislam.com/demo/proshar-preview
+    Description: Rokstar - Portfolio Html Template
+    Author: dreamthemecoders
+    Author URI: https://themeforest.net/user/dreamthemecoders
+    Version: 1.0
+
+-----------------------------------------------------------------------------------
+    
+    CSS INDEX
+    ===================
+  
+    1. Header Area
+    2. Slider Area
+    3. About Area
+    4. Service Area
+    5. Fortfolio Area
+    6. Contact Area
+    7. Footer Area
+
+-----------------------------------------------------------------------------------*/
+
+/*============================================
+* 1. Header Area
+*=============================================*/
+.header-area{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    background: #202020;
+}
+.logo{}
+.logo a{
+    display: inline-block;
+}
+.logo a img{
+    max-width: 43px;
+}
+.main-menu{}
+.main-menu nav ul{
+    text-align: right;
+}
+.main-menu nav ul li{
+    display: inline-block;
+}
+.main-menu nav ul li a{
+        display: block;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0;
+    padding: 35px 17px;
+    position: relative;
+}
+
+.main-menu nav ul li a:before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 17%;
+    height: 7px;
+    width: 7px;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0;
+    transform: translateX(-50%);
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+.main-menu nav ul li a:after{
+    content: attr(data-hover);
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    opacity: 0;
+    transform: translateX(-50%);
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+.main-menu nav ul li a:hover:after{
+    opacity: 1;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.main-menu nav ul li.active a:before{
+    opacity: 1;
+}
+.main-menu nav ul li a span{
+    display: block;
+    -webkit-transition: all 0.15s ease-in-out 0s;
+    -o-transition: all 0.15s ease-in-out 0s;
+    transition: all 0.15s ease-in-out 0s;
+}
+.main-menu nav ul li a:hover span{
+    transform: translate3d(0,-12px,0);
+    opacity: 0;
+}
+
+/*mobiel menu*/
+
+.slicknav_menu .slicknav_menutxt {
+    display: none;
+}
+
+.slicknav_menu {
+    background: transparent;
+    margin-top: 21px;
+}
+
+.slicknav_menu .slicknav_icon-bar {
+    height: 2px;
+    width: 19px;
+    margin: 3px 0px;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.slicknav_btn {
+    background-color: transparent;
+    position: relative;
+    margin-top: -38px;
+}
+
+.slicknav_menu .slicknav_open .slicknav_icon-bar:nth-child(2) {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+}
+
+.slicknav_menu .slicknav_open .slicknav_icon-bar:nth-child(1) {
+    -webkit-transform: rotate(45deg) translate(1px, 7px);
+    transform: rotate(45deg) translate(1px, 7px);
+}
+
+.slicknav_menu .slicknav_open .slicknav_icon-bar:nth-child(3) {
+    -webkit-transform: rotate(-45deg) translateY(-6px);
+    transform: rotate(-45deg) translateY(-6px);
+}
+
+.slicknav_menu {
+    margin-top: 0;
+}
+
+.slicknav_nav {
+    background: #0c0c0c;
+    margin: 0;
+    padding: 6px 0px;
+    margin-top: 10px;
+}
+
+.slicknav_nav a:hover {
+    background: #fefefe none repeat scroll 0 0;
+    border-radius: 0;
+}
+
+.slicknav_nav a {
+    font-size: 14px;
+    letter-spacing: 0.01em;
+}
+
+/*============================================
+* END Header Area
+*=============================================*/
+
+/*============================================
+* 2. Slider Area
+*=============================================*/
+.slider-area{
+    height: 800px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.white_svg{
+    position: absolute;
+    left: 0;
+    bottom: -11px;
+    width: 100%;
+    overflow: hidden;
+}
+.svg_white svg{
+    fill: #fff;
+    width: 101%;
+}
+.svg_gray svg{
+    fill: #f9f9f9;
+    width: 101%;
+}
+.slider-content h2{
+    font-size: 55px;
+    color: #ffffff;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 55px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.slider-content h4{
+    font-size: 19px;
+    font-weight: 300;
+    color: #ffffff;
+    letter-spacing: 0em;
+    line-height: 41px;
+    text-transform: uppercase;
+}
+.slider-content h4 span{
+    display: inline-block!important;
+    letter-spacing: 0;
+}
+.txt1-wrap{
+    overflow: hidden;
+    margin-bottom: 100px;
+}
+.txt1{
+    opacity: 0;
+    display: inline-block;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    -webkit-transform: translate3d(0px, 100%, 0px);
+    -ms-transform: translate3d(0px, 100%, 0px);
+    -o-transform: translate3d(0px, 100%, 0px);
+    transform: translate3d(0px, 100%, 0px);
+}
+
+.next-section{
+        position: absolute;
+    right: 38px;
+    bottom: 123px;
+    transform: rotate(-90deg);
+    z-index: 99;
+    padding-left: 32px;
+}
+.next-section a{
+        display: block;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+        font-weight: 300;
+        position: relative;
+}
+.next-section strong{
+        display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    margin-left: 4px;
+}
+.next-section a:after{
+    content: '';
+    position: absolute;
+    bottom: 3px;
+    right: 0;
+    height: 1px;
+    width: 0%;
+    background-color: #ddd;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+.next-section a:hover:after{
+    width: 126%;
+}
+.next-section a:before{
+        content: '\f104';
+    position: absolute;
+    bottom: 3px;
+    left: -17px;
+    font-family: fontawesome;
+    font-size: 24px;
+    color: #b1acac;
+    -webkit-animation: secdownmoving 1000ms linear 0s infinite;
+    -o-animation: secdownmoving 1000ms linear 0s infinite;
+    animation: secdownmoving 1000ms linear 0s infinite;
+}
+@keyframes secdownmoving{
+    0%{
+        -webkit-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+        -o-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+    50%{
+        -webkit-transform: translateX(-10px);
+        -ms-transform: translateX(-10px);
+        -o-transform: translateX(-10px);
+        transform: translateX(-10px);
+    }
+    100%{
+        -webkit-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+        -o-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+}
+
+/*============================================
+* END Slider Area
+*=============================================*/
+
+/*============================================
+* 3. About Area
+*=============================================*/
+.about-area{
+    padding: 100px 0px 150px;
+}
+.abt-left-thumb{
+    display: block;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0px 0px 21px rgba(0,0,0,0.3);
+}
+.abt-left-thumb:before{
+    content: '';
+    position: absolute;
+    right: -45px;
+    bottom: -45px;
+    border: 2px solid #f3f2f2;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    border-radius: 0px 0px 30px 0px;
+}
+.abt-left-thumb img{
+    border-radius: 4px;
+    overflow: hidden;
+    max-width: 100%;
+}
+.abt-content{}
+.section-title{}
+.section-title h2{
+        font-size: 29px;
+    letter-spacing: 0;
+    color: #222222;
+    line-height: 30px;
+    margin-bottom: 50px;
+    padding-bottom: 16px;
+    position: relative;
+}
+.section-title h2:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 5px;
+    width: 55px;
+    background-color: #202020;
+}
+.section-title h2:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    height: 1px;
+    width: 255px;
+    background-color: #202020;
+}
+.section-title h2.txt2_is_show:after{
+    width: 0;
+    -webkit-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+}
+.section-title h2.is_show:after{
+    width: 255px;
+}
+.abt-content p{
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    letter-spacing: 0;
+    margin-bottom: 19px;
+}
+.social-link{
+    display: inline-block;
+    margin-top: 11px;
+}
+.social-link h5{
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    font-size: 16px;
+    letter-spacing: 0;
+    font-weight: 600;
+    color: #222222;
+    margin-right: 22px;
+}
+.social-link a{
+    display: inline-block;
+    font-size: 15px;
+    color: #333333;
+    margin-right: 11px;
+}
+.social-link:hover a{
+    color: #888;
+}
+.social-link a:hover{
+    color: #000;
+}
+
+/*============================================
+* END About Area
+*=============================================*/
+
+/*============================================
+* 4. Service Area
+*=============================================*/
+.service-area{
+    position: relative;
+}
+.single-service{
+    z-index: 1;
+    position: relative;
+    padding: 14px;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+.single-service:hover,
+.single-service:hover .icon{
+    background-color: #f9f9f9;
+}
+.single-service .icon{
+        float: left;
+    margin-right: 17px;
+    margin-top: 10px;
+        background: #fff;
+}
+.single-service:before{
+        content: '';
+    position: absolute;
+    left: 40px;
+    top: 22px;
+    height: 0;
+    width: 1px;
+    background: #d0cdcd;
+    z-index: -1;
+    -webkit-transition: all 0.8s ease 0s;
+    -o-transition: all 0.8s ease 0s;
+    transition: all 0.8s ease 0s;
+}
+.txt2_is_show.is_show:before{
+    height: calc(100% - 40px);
+}
+.single-service:after{
+    content: '';
+    position: absolute;
+    left: 35px;
+    bottom: 16px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background: #d0cdcd;
+}
+.txt2_is_show:after{
+    opacity: 0;
+    -webkit-transition: all 0.8s ease 1.1s;
+    -o-transition: all 0.8s ease 1.1s;
+    transition: all 0.8s ease 1.1s;
+}
+.txt2_is_show.is_show:after{
+    opacity: 1;
+}
+.single-service .icon span:before{
+    font-size: 50px;
+        color: #222;
+}
+.srvc-content{
+    overflow: hidden;
+}
+.srvc-content h4{
+        font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+    color: #222222;
+    margin-bottom: 15px;
+}
+.srvc-content p{
+    color: #444;
+    line-height: 26px;
+}
+
+
+/*============================================
+* END Service Area
+*=============================================*/
+
+/*============================================
+* 5. Fortfolio Area
+*=============================================*/
+.fortfolio-area{
+    position: relative;
+}
+.fortfolio-filter{
+    margin-bottom: 50px;
+}
+.fortfolio-filter button{
+        font-size: 14px;
+    font-weight: 500;
+    color: #000000;
+    letter-spacing: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding-bottom: 6px;
+    position: relative;
+    margin-right: 21px;
+}
+.fortfolio-filter button:before{
+        content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 7px;
+    width: 7px;
+    opacity: 0;
+    background: #464444;
+    border-radius: 50%;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+.fortfolio-filter button.active:before{
+    opacity: 1;
+}
+.prt-item{
+    margin-bottom: 30px;
+}
+.prt-item a{
+    display: block;
+}
+.prt-item a.expand-video{
+    position: relative;
+    z-index: 1;
+}
+.prt-item a.expand-video span{
+        position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.prt-item a.expand-video:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    background-color: rgba(27, 27, 27, 0.5);
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+.prt-item:hover a.expand-video:before{
+    opacity: 1;
+}
+.prt-item a.expand-video span:before{
+    font-size: 50px;
+    color: #fff;
+}
+.prt-item a:hover {
+    box-shadow: 0px 10px 27px rgba(0,0,0,0.1);
+}
+.prt-item a img{
+    max-width: 100%;
+    display: inline-block;
+}
+
+/*============================================
+* END Fortfolio Area
+*=============================================*/
+
+/*============================================
+* 6. Contact Area
+*=============================================*/
+.contact-area{
+    position: relative;
+}
+.contact-area .section-title{
+    margin-bottom: 60px;
+}
+.cnt-left ul li {
+    font-size: 14px;
+    color: #333;
+    letter-spacing: 0;
+    line-height: 23px;
+    margin-bottom: 13px;
+    font-weight: 500;
+}
+.cnt-left ul li span.ct-break{
+    display: block;
+}
+.cnt-left .social-link{
+    margin-top: 32px;
+}
+.contact-form form input,
+.contact-form form textarea{
+        height: 34px;
+    width: 100%;
+    background: #fff;
+    border: none;
+    border-bottom: 1px solid #dddddd;
+    margin-bottom: 20px;
+    letter-spacing: 0;
+    font-size: 13px;
+}
+.contact-form form input::-webkit-input-placeholder,
+.contact-form form textarea::-webkit-input-placeholder {
+  color: #777;
+}
+.contact-form form input::-moz-placeholder,
+.contact-form form textarea::-moz-placeholder {
+  color: #777;
+}
+.contact-form form input:-ms-input-placeholder,
+.contact-form form textarea:-ms-input-placeholder {
+  color: #777;
+}
+.contact-form form input:-moz-placeholder,
+.contact-form form textarea:-moz-placeholder {
+  color: #777;
+}
+.contact-form form textarea{
+    height: 87px;
+}
+.contact-form form .form-submit{
+    text-align: right;
+}
+.contact-form form button{
+        background: #222;
+    color: #fff;
+    border: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 9px 25px;
+    font-weight: 400;
+    cursor: pointer;
+    outline: none;
+}
+.contact-form form button i{
+    margin-left: 8px;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+.contact-form form button:hover i{
+    -webkit-transform: translateX(5px);
+    -ms-transform: translateX(5px);
+    -o-transform: translateX(5px);
+    transform: translateX(5px);
+}
+
+/*============================================
+* END Contact Area
+*=============================================*/
+
+/*============================================
+* 7. Footer Area
+*=============================================*/
+.footer-area{
+    padding: 18px 0px;
+    position: relative;
+}
+.copyright {
+    text-align: right;
+}
+.copyright p{
+        font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0;
+    color: #898989;
+}
+.flogo a img{
+    max-width: 40px;
+}
+.copyright p span{
+    display: inline-block;
+    color: #333;
+}
+.go-to-top a{
+    color: #333;
+    position: absolute;
+    left: calc(50% - 35px);
+    top: -35px;
+    background: #fff;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 70px;
+    box-shadow: 0px -2px 9.9px 0.1px rgba(186, 187, 188, 0.25);
+    font-size: 27px;
+}
+.go-to-top a:hover{
+    box-shadow: 0px -4px 9.9px 0.1px rgba(186, 187, 188, 0.25);
+}
+
+/*============================================
+* END Footer Area
+*=============================================*/
