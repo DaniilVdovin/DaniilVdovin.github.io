@@ -80,9 +80,10 @@
 @media (max-width: 767px) {
 	.mapouter {
 		top: 0px;
+		width: 250px;
 	}
 	.gmap_canvas {
-		width: 100px;
+		width: 250px;
 	}
     .container {
         width: 100%
