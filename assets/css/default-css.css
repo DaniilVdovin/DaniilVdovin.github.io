@@ -5,7 +5,7 @@
 */
 
 /*google font*/
-@import url("../../../../../../fonts.googleapis.com/css-family=Montserrat-300,400,500,600,700-Russo+One.css")/*tpa=https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Russo+One*/;
+@import url("https://fonts.googleapis.com/css-family=Montserrat-300,400,500,600,700-Russo+One.css")/*tpa=https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Russo+One*/;
 
 /* Your default CSS. */
 *{margin: 0;padding:0;box-sizing: border-box;}

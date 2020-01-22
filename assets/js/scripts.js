@@ -186,20 +186,6 @@
     /*================================
     9. Magnific Popup
     ==================================*/
-    $('.expand-img').magnificPopup({
-        type: 'image',
-        gallery: {
-            enabled: true
-        }
-
-    });
-
-    $('.expand-video').magnificPopup({
-        type: 'iframe',
-        gallery: {
-            enabled: true
-        }
-    });
 
     /*================================
     10. slicknav Mobile Menu
