@@ -51,7 +51,7 @@ function draw_circle_diagram(){
     //$text.textContent = $percent + "%";
     $text.setAttribute("y", $svg_height/2 + 4);
     
-    console.log($text);
+    //console.log($text);
   }
 }
 
