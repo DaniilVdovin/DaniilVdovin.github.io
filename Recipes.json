@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "recipes": [
+    {
+      "name": "Пельмени",
+      "description": "Просто пельмени",
+      "time": 10,
+      "complexity": 0,
+      "ingredients": [
+        {
+          "name": "Пельмени",
+          "count": 500,
+          "type": "гр."
+        },
+        {
+          "name": "Чёрный перец",
+          "count": 10,
+          "type": "шт."
+        },
+        {
+          "name": "Лавровый лист",
+          "count": 2,
+          "type": "шт."
+        },
+        {
+          "name": "Соль",
+          "count": 1,
+          "type": "ч.л."
+        },
+        {
+          "name": "Сливочное масло",
+          "count": 1,
+          "type": "ч.л."
+        },
+        {
+          "name": "Сметана",
+          "count": 0,
+          "type": "по вкусу"
+        },
+        {
+          "name": "Укроп",
+          "count": 0,
+          "type": "по вкусу"
+        }
+      ],
+      "cooking": [
+        {
+          "text": "Берём трёхлитровую кастрюлю и наливаем примерно 2 литра воды. Закидываем туда чёрный перец, соль, лавровый лист. Ставим кастрюлю на плиту и начинаем нагревать.",
+          "image": "https://foodforlife.ru/wp-content/uploads/2018/11/kak_praviljno_varitj_peljmeni00002.jpg"
+        },
+        {
+          "text": "Когда вода немного нагрелась (но ещё не закипела), добавляем сливочное масло. Это требуется для того, чтобы пельмени не слиплись друг с другом, а так же не прилипли к кастрюле.",
+          "image": "https://foodforlife.ru/wp-content/uploads/2018/11/kak_praviljno_varitj_peljmeni00003.jpg"
+        },
+        {
+          "text": "Дожидаемся пока вода закипела так, как показано на фотографии.",
+          "image": "https://foodforlife.ru/wp-content/uploads/2018/11/kak_praviljno_varitj_peljmeni00004.jpg"
+        },
+        {
+          "text": "Добавляем пельмени. Не плюхайте их сразу всей кучей в воду. Опускайте постепенно, в несколько этапов. Можно это делать руками, а можно с помощью шумовки (как показано на фото).",
+          "image": "https://foodforlife.ru/wp-content/uploads/2018/11/kak_praviljno_varitj_peljmeni00005.jpg"
+        },
+        {
+          "text": "Вода перестала кипеть так сильно, так как пельмени очень холодные и температура воды упала. Дожидаемся пока вода снова начнёт сильно кипеть и немного уменьшаем огонь (7/9).",
+          "image": "https://foodforlife.ru/wp-content/uploads/2018/11/kak_praviljno_varitj_peljmeni00006.jpg"
+        },
+        {
+          "text": "Дожидаемся пока все пельмени всплывут (на это у меня ушло около 2,5 минут).",
+          "image": "https://foodforlife.ru/wp-content/uploads/2018/11/kak_praviljno_varitj_peljmeni00007.jpg"
+        },
+        {
+          "text": "Как только пельмени всплыли, прикрываем кастрюлю крышкой и уменьшаем огонь до среднего (5-6/9). Вода обязательно должна булькать, но не огромными пузырями.",
+          "image": "https://foodforlife.ru/wp-content/uploads/2018/11/kak_praviljno_varitj_peljmeni00008.jpg"
+        },
+        {
+          "text": "Через полторы минуты снимаем крышку.",
+          "image": "https://foodforlife.ru/wp-content/uploads/2018/11/kak_praviljno_varitj_peljmeni00009.jpg"
+        },
+        {
+          "text": "Ещё через 2,5 минуты выключаем огонь — пельмени готовы.",
+          "image": "https://foodforlife.ru/wp-content/uploads/2018/11/kak_praviljno_varitj_peljmeni00010.jpg"
+        },
+        {
+          "text": "Подаём пельмени со сметаной и укропчиком. Если вы любите бульоны — то можете подавать пельмени вместе с бульон, в котором они варились.",
+          "image": "https://foodforlife.ru/wp-content/uploads/2018/11/kak_praviljno_varitj_peljmeni00011.jpg"
+        }
+      ]
+    }
+  ]
+}
