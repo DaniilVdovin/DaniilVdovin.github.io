@@ -71,7 +71,7 @@
             }, 800);
             setTimeout(function() {
                 preloader.remove();
-            }, 2000);
+            }, 800);
 
         } else {
             preloader.remove();
