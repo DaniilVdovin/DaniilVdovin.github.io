@@ -1,501 +1,759 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#202020" />
-    <title>Daniil Vdovin</title>
+    <meta name="theme-color" content="#0a0e14">
+    <title>Daniil Vdovin — Senior Full-stack Developer</title>
+    <meta name="description" content="Daniil Vdovin — Senior Full-stack Developer (C#/.NET, Angular). 7+ years in enterprise systems: micro-frontend platforms, .NET BFF, AI agents in the development workflow.">
     <link rel="shortcut icon" type="image/png" href="assets/img/icon/favicon.ico.png">
-    <!-- all css here -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/flaticon.css">
-    <link rel="stylesheet" href="assets/css/slicknav.min.css">
-    <link rel="stylesheet" href="assets/css/typography.css">
-    <link rel="stylesheet" href="assets/css/default-css.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <!-- Place this tag in your head or just before your close body tag. -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <script type="text/javascript" src="https://vk.com/js/api/openapi.js?166"></script>
-    <link rel="stylesheet" href="assets/css/circle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0e14;
+            --bg-soft: #0e131b;
+            --card: #121924;
+            --card-hover: #17212f;
+            --border: #1e2a3a;
+            --text: #e6edf3;
+            --muted: #8b98a9;
+            --accent: #7c8cf8;
+            --accent2: #38bdf8;
+            --grad: linear-gradient(135deg, #7c8cf8 0%, #38bdf8 100%);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { color: var(--accent2); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .container { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
 
-    <link rel="stylesheet" href="assets/css/responsive.css">
-    <!-- modernizr css -->
-    <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+        /* ---------- nav ---------- */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(10, 14, 20, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+        .nav-logo { font-weight: 800; font-size: 17px; color: var(--text); letter-spacing: 0.3px; }
+        .nav-logo:hover { text-decoration: none; }
+        .nav-logo span { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .nav-links { display: flex; align-items: center; gap: 22px; }
+        .nav-links a { color: var(--muted); font-size: 14px; font-weight: 500; }
+        .nav-links a:hover { color: var(--text); text-decoration: none; }
+        .lang-toggle { display: flex; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+        .lang-btn {
+            background: none; border: none; color: var(--muted);
+            font: 600 12px 'Inter', sans-serif; padding: 5px 10px; cursor: pointer;
+        }
+        .lang-btn.active { background: var(--grad); color: #0a0e14; }
+        @media (max-width: 720px) {
+            .nav-links a:not(.lang-btn) { display: none; }
+        }
+
+        /* ---------- hero ---------- */
+        header {
+            padding: 150px 0 90px;
+            background:
+                radial-gradient(ellipse 60% 50% at 70% 20%, rgba(124, 140, 248, 0.14), transparent),
+                radial-gradient(ellipse 50% 40% at 20% 80%, rgba(56, 189, 248, 0.08), transparent),
+                var(--bg);
+        }
+        .hero { display: grid; grid-template-columns: 1fr 320px; gap: 48px; align-items: start; }
+        .hero-role {
+            display: inline-block;
+            background: var(--grad);
+            color: #0a0e14;
+            font-weight: 700; font-size: 13px;
+            padding: 6px 14px; border-radius: 999px;
+            margin-bottom: 18px;
+        }
+        .hero h1 { font-size: 44px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 18px; }
+        .hero p { color: var(--muted); font-size: 16px; max-width: 560px; }
+        .hero p + p { margin-top: 8px; }
+        .hero p strong { color: var(--text); font-weight: 600; }
+        .hl { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 700; }
+        .hero-feats { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; max-width: 640px; }
+        .hero-feats .feat {
+            position: relative;
+            margin: 0;
+            padding-left: 22px;
+            font-size: 15px;
+        }
+        .hero-feats .feat::before {
+            content: "";
+            position: absolute; left: 2px; top: 8px;
+            width: 7px; height: 7px;
+            background: var(--grad);
+            border-radius: 2px;
+            transform: rotate(45deg);
+        }
+        .hero-actions { display: flex; gap: 14px; margin-top: 28px; }
+        .btn {
+            display: inline-block; font-weight: 600; font-size: 15px;
+            padding: 12px 26px; border-radius: 10px;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .btn:hover { text-decoration: none; transform: translateY(-2px); }
+        .btn-primary { background: var(--grad); color: #0a0e14; box-shadow: 0 8px 24px rgba(124, 140, 248, 0.25); }
+        .btn-ghost { border: 1px solid var(--border); color: var(--text); }
+        .hero-side { display: flex; flex-direction: column; align-items: center; margin-top: 16px; }
+        .hero-avatar-wrap { position: relative; width: 320px; height: 320px; display: grid; place-items: center; }
+        .hero-avatar {
+            width: 240px; height: 240px; border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(124, 140, 248, 0.5);
+            box-shadow: 0 0 60px rgba(124, 140, 248, 0.35);
+            z-index: 1;
+        }
+        .hero-orbit { position: absolute; inset: 0; width: 100%; height: 100%; animation: orbit-spin 30s linear infinite; }
+        .hero-orbit text { fill: var(--muted); font-size: 13px; font-weight: 600; letter-spacing: 2px; }
+        @keyframes orbit-spin { to { transform: rotate(360deg); } }
+        .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 24px; margin-top: 30px; width: 100%; }
+        .hero-stat { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+        .hero-stat b { font-size: 20px; font-weight: 800; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .hero-stat span { font-size: 10.5px; color: var(--muted); letter-spacing: 0.3px; }
+        @media (max-width: 820px) {
+            .hero { grid-template-columns: 1fr; }
+            .hero-side { margin-top: 32px; }
+            .hero-avatar-wrap { width: 240px; height: 240px; }
+            .hero-avatar { width: 160px; height: 160px; }
+            .hero h1 { font-size: 32px; }
+        }
+
+        /* ---------- sections ---------- */
+        section { padding: 72px 0; }
+        section:nth-of-type(even) { background: var(--bg-soft); }
+        .sec-label {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent); font-size: 13px; font-weight: 500;
+            text-transform: uppercase; letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        h2 { font-size: 30px; font-weight: 800; letter-spacing: -0.3px; margin-bottom: 32px; }
+        .os-head { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 32px; }
+        .os-head h2 { margin-bottom: 0; }
+        .os-badge {
+            background: var(--grad); color: #0a0e14;
+            font-weight: 700; font-size: 13px;
+            padding: 7px 14px; border-radius: 999px;
+            white-space: nowrap;
+        }
+
+        /* ---------- achievements ---------- */
+        .ach-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+        .ach-card {
+            background: var(--card); border: 1px solid var(--border);
+            border-radius: 14px; padding: 18px 20px;
+            display: flex; gap: 14px; align-items: flex-start;
+            transition: background 0.15s ease, border-color 0.15s ease;
+        }
+        .ach-card:hover { background: var(--card-hover); border-color: #2a3a52; }
+        .ach-icon { font-size: 22px; line-height: 1.3; }
+        .ach-card p { font-size: 14.5px; color: var(--text); }
+        @media (max-width: 720px) { .ach-grid { grid-template-columns: 1fr; } }
+
+        /* ---------- experience ---------- */
+        .exp-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; }
+        table { width: 100%; border-collapse: collapse; min-width: 640px; }
+        th {
+            text-align: left; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;
+            color: var(--muted); padding: 14px 18px; background: var(--card);
+            border-bottom: 1px solid var(--border);
+        }
+        td { padding: 16px 18px; font-size: 14.5px; border-bottom: 1px solid var(--border); vertical-align: top; }
+        tr:last-child td { border-bottom: none; }
+        td:first-child { white-space: nowrap; color: var(--muted); font-family: 'JetBrains Mono', monospace; font-size: 13px; }
+        td:nth-child(2) { font-weight: 600; }
+
+        /* ---------- stack ---------- */
+        .stack-group { margin-bottom: 28px; }
+        .stack-group h3 { font-size: 14px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; font-weight: 600; }
+        .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+        .chip {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--card); border: 1px solid var(--border);
+            border-radius: 999px; padding: 8px 16px;
+            font-size: 14px; font-weight: 500;
+        }
+        .chip i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+
+        /* ---------- open source ---------- */
+        .os-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .os-card {
+            background: var(--card); border: 1px solid var(--border);
+            border-radius: 14px; padding: 20px;
+            display: flex; flex-direction: column; gap: 8px;
+            transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+        }
+        .os-card:hover { background: var(--card-hover); border-color: #2a3a52; transform: translateY(-3px); }
+        .os-name { font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 500; color: var(--text); }
+        .os-name:hover { text-decoration: none; color: var(--accent2); }
+        .os-card p { font-size: 13.5px; color: var(--muted); flex: 1; }
+        .os-link { font-size: 13px; font-weight: 600; }
+        @media (max-width: 820px) { .os-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 560px) { .os-grid { grid-template-columns: 1fr; } }
+
+        /* ---------- personal projects ---------- */
+        .pp-masonry { columns: 3; column-gap: 16px; }
+        .pp-card {
+            break-inside: avoid; margin-bottom: 16px;
+            border-radius: 14px; overflow: hidden;
+            border: 1px solid var(--border); background: var(--card);
+            transition: border-color 0.15s ease, transform 0.15s ease;
+            display: block; position: relative;
+        }
+        .pp-tag {
+            position: absolute; top: 10px; left: 10px; z-index: 2;
+            background: rgba(11, 14, 20, 0.82); border: 1px solid var(--border);
+            color: var(--accent2); font-size: 11px; font-weight: 600;
+            padding: 4px 9px; border-radius: 7px; backdrop-filter: blur(4px);
+        }
+        .pp-masonry.uniform .pp-card img { aspect-ratio: 16 / 9; object-fit: cover; }
+        .pp-card:hover { border-color: #2a3a52; transform: translateY(-3px); }
+        .pp-card:hover img { transform: scale(1.04); }
+        .pp-card img { width: 100%; display: block; transition: transform 0.3s ease; }
+        .pp-name { display: block; padding: 10px 14px 11px; border-top: 1px solid var(--border); background: rgba(0, 0, 0, 0.22); font-size: 13.5px; font-weight: 700; letter-spacing: 0.2px; color: var(--text); }
+        .pp-name i { display: block; margin-top: 2px; font-style: normal; font-size: 12px; font-weight: 500; letter-spacing: 0.1px; color: var(--muted); }
+        .pp-card:hover .pp-name { color: var(--accent2); }
+        .pp-card.static { cursor: default; }
+        .pp-card.static:hover { border-color: var(--border); transform: none; }
+        .pp-card.static:hover img { transform: none; }
+        .pp-card.static:hover .pp-name { color: var(--text); }
+        .sec-note { color: var(--muted); font-size: 14px; margin-top: -20px; margin-bottom: 32px; }
+        @media (max-width: 820px) { .pp-masonry { columns: 2; } }
+        @media (max-width: 520px) { .pp-masonry { columns: 1; } }
+
+        /* ---------- certificates ---------- */
+        details.certs {
+            background: var(--card); border: 1px solid var(--border);
+            border-radius: 14px; padding: 4px 20px;
+        }
+        details.certs summary {
+            cursor: pointer; font-weight: 600; font-size: 15px; padding: 14px 0;
+            list-style: none; display: flex; align-items: center; gap: 10px;
+        }
+        details.certs summary::-webkit-details-marker { display: none; }
+        details.certs summary::before { content: '▸'; color: var(--accent); transition: transform 0.2s ease; display: inline-block; }
+        details.certs[open] summary::before { transform: rotate(90deg); }
+        .cert-list { padding: 0 0 18px 24px; }
+        .cert-list li { font-size: 14.5px; margin-bottom: 8px; color: var(--muted); }
+        .cert-list li b { color: var(--text); font-weight: 600; }
+
+        /* ---------- contact ---------- */
+        .contact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+        .contact-card {
+            background: var(--card); border: 1px solid var(--border);
+            border-radius: 14px; padding: 20px;
+            display: flex; flex-direction: column; gap: 6px;
+        }
+        .contact-card .cc-label { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); font-weight: 600; }
+        .contact-card a, .contact-card span.cc-value { font-size: 15px; font-weight: 500; color: var(--text); word-break: break-all; }
+        .contact-card a:hover { color: var(--accent2); text-decoration: none; }
+        @media (max-width: 720px) { .contact-grid { grid-template-columns: 1fr; } }
+
+        /* ---------- footer ---------- */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 28px 0; text-align: center;
+            color: var(--muted); font-size: 13.5px;
+        }
+
+        /* ---------- reveal ---------- */
+        .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
+        .reveal.visible { opacity: 1; transform: none; }
+    </style>
 </head>
+<body>
 
-<body id="top">
-    <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="javascript:if(confirm(%27http://browsehappy.com/  \n\nThis file was not retrieved by Teleport VLX, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://browsehappy.com/%27" tppabs="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-    <!-- preloader area start -->
-    <div id="preloader">
-        <div class="loader_line"></div>
-    </div>
-    <!-- prealoader area end -->
-    <!-- header area start -->
-    <header>
-        <div class="header-area">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-3 col-sm-12">
-                        <div class="logo">
-                            <a href="index.html"><img src="assets/img/icon/m-icon-light.png" alt="logo"></a>
-                        </div>
-                    </div>
-                    <div class="col-md-9 d-none d-md-block">
-                        <div class="main-menu">
-                            <nav class="nav-menu">
-                                <ul id="nav_menu">
-                                    <li class="active"><a data-hover="home" href="#home"><span>Home</span></a></li>
-                                    <li><a data-hover="about" href="#about"><span>About</span></a></li>
-                                    <li><a data-hover="portfolio" href="#portfolio"><span>Portfolio</span></a></li>
-                                    <li><a data-hover="contact" href="#contact"><span>Contact</span></a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 d-block d-md-none">
-                        <div class="responsive-menu-wrap"></div>
-                    </div>
-                </div>
+<nav>
+    <div class="container nav-inner">
+        <a class="nav-logo" href="#top">Daniil <span>Vdovin</span></a>
+        <div class="nav-links">
+            <a href="#achievements" data-i18n="nav_ach">Achievements</a>
+            <a href="#experience" data-i18n="nav_exp">Experience</a>
+            <a href="#stack" data-i18n="nav_stack">Stack</a>
+            <a href="#projects" data-i18n="nav_projects">Projects</a>
+            <a href="#contact" data-i18n="nav_contact">Contact</a>
+            <div class="lang-toggle">
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="ru">RU</button>
             </div>
-        </div>
-    </header>
-    <!-- header area end -->
-    <!-- slider area start -->
-    <section id="home" class="slider-area parallax" data-speed="3" data-bg-image="assets/img/bg.jpg">
-        <div class="container">
-            <div class="slider-content">
-                <h2 class="txtanim1"><span>Vdovin</span> <span>Daniil</span></h2>
-                <h4 class="txtanim1 delay1">
-                    <span>S</span>
-                    <span>o</span>
-                    <span>f</span>
-                    <span>t</span>
-                    <span>w</span>
-                    <span>a</span>
-                    <span>r</span>
-                    <span>e</span>
-                    <span> </span>
-                    <span>D</span>
-                    <span>e</span>
-                    <span>v</span>
-                    <span>e</span>
-                    <span>l</span>
-                    <span>o</span>
-                    <span>p</span>
-                    <span>e</span>
-                    <span>r</span>
-                </h4>
-            </div>
-        </div>
-        <div class="white_svg svg_white">
-            <svg x="0px" y="0px" viewBox="0 186.5 1920 113.5">
-                <polygon points="0,300 655.167,210.5 1432.5,300 1920,198.5 1920,300 " />
-            </svg>
-        </div>
-        <div class="txtanim1 next-section">
-            <span><a href="#about">About me<strong><i class="fa fa-question-circle"></i></strong></a></span>
-        </div>
-    </section>
-    <!-- slider area end -->
-    <!-- about area strat -->
-    <section class="about-area" id="about">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-4">
-                    <div class="abt-left-thumb">
-                        <img src="assets/img/x2IXgBzA3FXpovy_-sMUjRmVk9dJVcgovn_P61y_lrhCunlTYf7lNchqvttjWQvmy-KcPAErPwRMKzUj-i7EUWDA.jpg" alt="image">
-                    </div>
-                </div>
-                <div class="col-md-7 offset-md-1">
-                    <div class="abt-content">
-                        <div class="section-title">
-                            <h2 class="txt2_is_show">About Me</h2>
-                        </div>
-                        <p class="txt1-wrap">
-                            <span class="txt1">
-                                I'm Software developer. I wanna show you some my work.
-                            </span>
-                        </p>
-                        <p class="txt1-wrap">
-                            <span class="txt1">
-                                <i class="fa fa-trophy"></i>
-                             </span>
-                                    <span class="txt1">
-                                        At It-Start 2019: Winner in the nomination "Best Socially Oriented Project".
-                              </span>
-                        </p>
-                        <p class="txt1-wrap">
-                            <span class="txt1">
-                                <i class="fa fa-star"></i>
-                            </span>
-                            <span class="txt1">
-                                More than 10 achievements in volunteering in major events.
-                            </span>
-                        </p>
-                        <p class="txt1-wrap">
-                            <span class="txt1">
-                                <i class="fa fa-star"></i>
-                            </span>
-                            <span class="txt1">
-                                Achievement for actively promoting student initiatives.
-                            </span>
-                        </p>
-
-                        <p class="txt1-wrap">
-                            <span class="txt1">Why im best ?</span> <span class="txt1">
-                                I'm work because I wanna create something new, something bet mater. I make software for my self and for all around.
-                            </span>
-                        </p>
-                        <div class="social-link">
-                            <h5>Contants :</h5>
-                            <a href="https://www.facebook.com/profile.php?id=100005186350219"><i class="fa fa-facebook"></i></a>
-                            <a href="https://twitter.com/v_teme_YouTube"><i class="fa fa-twitter"></i></a>
-                            <a href="https://github.com/DaniilVdovin"><i class="fa fa-github"></i></a>
-                            <a href="https://www.instagram.com/mike_marelo/"><i class="fa fa-instagram"></i></a>
-                        </div>
-                        <div>
-                            <a class="github-button" href="https://github.com/DaniilVdovin" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-size="large" aria-label="Follow @DaniilVdovin on GitHub">Follow @DaniilVdovin</a>
-                        </div>
-                        <!-- VK Widget -->
-                        <div id="vk_contact_us">
-                        <script type="text/javascript">
-                            VK.Widgets.ContactUs("vk_contact_us", { text: "My VK" }, 435573722);
-                        </script>
-                            </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- about area end -->
-    <!-- service area start -->
-    <div class="service-area pb--200">
-        <div class="container">
-            <div style="display: inline-table;">
-                <div class="section-title">
-                    <h2 class="txt2_is_show">Stats (in progress)</h2>
-                </div>
-                <svg class="circle-diagram" width="58" height="58" data-percent="99" data-stroke-color="#000" data-stroke-width="2">
-                    <circle class="circle-diagram__circle" cx="50%" cy="50%" r="50%" stroke="#D1D1D1" stroke-width="1" fill="none" />
-                    <path class="circle-diagram__arc" fill="none" />
-                    <text class="circle-diagram__text" x="50%" y="33" style="text-anchor: middle; font-size: 8px;">.NET</text>
-                </svg>
-                <svg class="circle-diagram" width="58" height="58" data-percent="85" data-stroke-color="#000" data-stroke-width="2">
-                    <circle class="circle-diagram__circle" cx="50%" cy="50%" r="50%" stroke="#D1D1D1" stroke-width="1" fill="none" />
-                    <path class="circle-diagram__arc" fill="none" />
-                    <text class="circle-diagram__text" x="50%" y="33" style="text-anchor: middle; font-size: 8px;">WPF</text>
-                </svg>
-                <svg class="circle-diagram" width="58" height="58" data-percent="85" data-stroke-color="#000" data-stroke-width="2">
-                    <circle class="circle-diagram__circle" cx="50%" cy="50%" r="50%" stroke="#D1D1D1" stroke-width="1" fill="none" />
-                    <path class="circle-diagram__arc" fill="none" />
-                    <text class="circle-diagram__text" x="50%" y="33" style="text-anchor: middle; font-size: 8px;">Java</text>
-                </svg>
-                <svg class="circle-diagram" width="58" height="58" data-percent="65" data-stroke-color="#000" data-stroke-width="2">
-                    <circle class="circle-diagram__circle" cx="50%" cy="50%" r="50%" stroke="#D1D1D1" stroke-width="1" fill="none" />
-                    <path class="circle-diagram__arc" fill="none" />
-                    <text class="circle-diagram__text" x="50%" y="33" style="text-anchor: middle; font-size: 8px;">Python</text>
-                </svg>
-                <svg class="circle-diagram" width="58" height="58" data-percent="35" data-stroke-color="#000" data-stroke-width="2">
-                    <circle class="circle-diagram__circle" cx="50%" cy="50%" r="50%" stroke="#D1D1D1" stroke-width="1" fill="none" />
-                    <path class="circle-diagram__arc" fill="none" />
-                    <text class="circle-diagram__text" x="50%" y="33" style="text-anchor: middle; font-size: 8px;">React</text>
-                </svg>
-                <svg class="circle-diagram" width="58" height="58" data-percent="99" data-stroke-color="#000" data-stroke-width="2">
-                    <circle class="circle-diagram__circle" cx="50%" cy="50%" r="50%" stroke="#D1D1D1" stroke-width="1" fill="none" />
-                    <path class="circle-diagram__arc" fill="none" />
-                    <text class="circle-diagram__text" x="50%" y="33" style="text-anchor: middle; font-size: 8px;">MVS</text>
-                </svg>
-                <svg class="circle-diagram" width="58" height="58" data-percent="30" data-stroke-color="#000" data-stroke-width="2">
-                    <circle class="circle-diagram__circle" cx="50%" cy="50%" r="50%" stroke="#D1D1D1" stroke-width="1" fill="none" />
-                    <path class="circle-diagram__arc" fill="none" />
-                    <text class="circle-diagram__text" x="50%" y="33" style="text-anchor: middle; font-size: 8px;">Spring</text>
-                </svg>
-                <svg class="circle-diagram" width="58" height="58" data-percent="99" data-stroke-color="#000" data-stroke-width="2">
-                    <circle class="circle-diagram__circle" cx="50%" cy="50%" r="50%" stroke="#D1D1D1" stroke-width="1" fill="none" />
-                    <path class="circle-diagram__arc" fill="none" />
-                    <text class="circle-diagram__text" x="50%" y="33" style="text-anchor: middle; font-size: 8px;">Unity3D</text>
-                </svg>
-                <svg class="circle-diagram" width="58" height="58" data-percent="70" data-stroke-color="#000" data-stroke-width="2">
-                    <circle class="circle-diagram__circle" cx="50%" cy="50%" r="50%" stroke="#D1D1D1" stroke-width="1" fill="none" />
-                    <path class="circle-diagram__arc" fill="none" />
-                    <text class="circle-diagram__text" x="50%" y="33" style="text-anchor: middle; font-size: 8px;">AStudio</text>
-                </svg>
-                <svg class="circle-diagram" width="58" height="58" data-percent="85" data-stroke-color="#000" data-stroke-width="2">
-                    <circle class="circle-diagram__circle" cx="50%" cy="50%" r="50%" stroke="#D1D1D1" stroke-width="1" fill="none" />
-                    <path class="circle-diagram__arc" fill="none" />
-                    <text class="circle-diagram__text" x="50%" y="33" style="text-anchor: middle; font-size: 8px;">API</text>
-                </svg>
-            </div>
-        </div>
-        <div class="white_svg svg_gray">
-            <svg x="0px" y="0px" viewBox="0 186.5 1920 113.5">
-                <polygon points="0,300 655.167,210.5 1432.5,300 1920,198.5 1920,300 " />
-            </svg>
         </div>
     </div>
-    <!-- service area end -->
-    <!-- portfolio area start -->
-    <section class="fortfolio-area bg-gray pt--100 pb--200" id="portfolio">
+</nav>
+
+<header id="top">
+    <div class="container hero">
+        <div>
+            <span class="hero-role" data-i18n="hero_role">Senior Full-stack Developer (C#/.NET, Angular)</span>
+            <h1>Daniil Vdovin</h1>
+            <p data-i18n="hero_p1" data-i18n-html>Full-stack developer with <span class="hl">7+ years</span> of experience in large-scale enterprise systems.</p>
+            <div class="hero-feats">
+                <p class="feat" data-i18n="hero_p2" data-i18n-html>Currently: <span class="hl">micro-frontend platform</span> for a state procurement ERP (Moscow Region) — host + independent MFEs (Angular), .NET BFF, integrations with government services.</p>
+                <p class="feat" data-i18n="hero_p3" data-i18n-html><span class="hl">Full development cycle</span>: from data model and business logic to UI.</p>
+                <p class="feat" data-i18n="hero_p4" data-i18n-html>Building <span class="hl">internal tooling</span> for the team: shared component libraries, templates, agent skills and MCP tools.</p>
+                <p class="feat" data-i18n="hero_p5" data-i18n-html>Bringing <span class="hl">AI agents</span> into the development workflow: task orchestration, code review, documentation.</p>
+            </div>
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="https://github.com/DaniilVdovin" target="_blank" rel="noopener">GitHub</a>
+                <a class="btn btn-ghost" href="#contact" data-i18n="btn_contact">Contact</a>
+            </div>
+        </div>
+        <div class="hero-side">
+            <div class="hero-avatar-wrap">
+                <img class="hero-avatar" src="assets/img/daniil-photo.jpg" alt="Daniil Vdovin">
+                <svg class="hero-orbit" viewBox="0 0 320 320" aria-hidden="true">
+                    <defs>
+                        <path id="orbitPath" d="M160,160 m-148,0 a148,148 0 1,1 296,0 a148,148 0 1,1 -296,0"></path>
+                    </defs>
+                    <text><textPath href="#orbitPath" textLength="930" lengthAdjust="spacingAndGlyphs">OPEN TO WORK • SENIOR FULL-STACK DEVELOPER • C#/.NET • ANGULAR • MICRO-FRONTENDS • AI AGENTS •</textPath></text>
+                </svg>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat"><b data-target="7" data-suffix="+">0</b><span data-i18n="stat_years">years</span></div>
+                <div class="hero-stat"><b data-target="250" data-suffix="+">0</b><span data-i18n="stat_projects">projects</span></div>
+                <div class="hero-stat"><b data-target="50" data-suffix="+">0</b><span data-i18n="stat_open">open projects</span></div>
+                <div class="hero-stat"><b data-target="8">0</b><span data-i18n="stat_certs">certificates</span></div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Achievements -->
+    <section id="achievements">
         <div class="container">
-            <div class="section-title">
-                <h2 class="txt2_is_show">My portfolio</h2>
+            <div class="reveal">
+                <div class="sec-label">01</div>
+                <h2 data-i18n="sec_ach">Key Achievements</h2>
             </div>
-            <div class="portfolio-masonary row" id="container">
-                 <div class="prt-grid marketing web col-md-4 col-sm-6">
-                    <div class="prt-item">
-                        <a class="expand-img" href="https://raspmanager.detaltex.ru">
-                            <img src="assets/img/Монтажная область 3.png" alt="image">
-                        </a>
-                    </div>
-                </div>
-                <div class="prt-grid marketing web col-md-4 col-sm-6">
-                    <div class="prt-item">
-                        <a class="expand-img" href="https://github.com/DaniilVdovin/CaseManager">
-                            <img src="assets/img/OpenSoft/CaseManagerSaleBoard.png" alt="image">
-                        </a>
-                    </div>
-                </div>
-                <div class="prt-grid web design col-md-4 col-sm-6">
-                    <div class="prt-item">
-                        <a class="expand-img" href="https://play.google.com/store/apps/details?id=com.DefaultCompany.play2d">
-                            <img src="assets/img/Games/orbitalshyter.png" alt="image">
-                        </a>
-                    </div>
-                </div>
-                <div class="prt-grid web design col-md-4 col-sm-6">
-                    <div class="prt-item">
-                        <a class="expand-img" href="https://apps.rustore.ru/app/com.daniilvdovin.pixelit">
-                            <img src="assets/img/OpenSoft/pixeling.png" alt="image">
-                        </a>
-                    </div>
-                </div>
-                <div class="prt-grid web design col-md-4 col-sm-6">
-                    <div class="prt-item">
-                        <a class="expand-img" href="https://play.google.com/store/apps/details?id=com.daniilvdovin.iswork">
-                            <img src="assets/img/Games/itswork.png" alt="image">
-                        </a>
-                    </div>
-                </div>
-                <div class="prt-grid web design col-md-4 col-sm-6">
-                    <div class="prt-item">
-                        <a class="expand-img" href="https://play.google.com/store/apps/details?id=com.daniilvdovin.wowmap">
-                            <img src="assets/img/Games/sale11Kdonwloads.jpg" alt="11k+ installs!">
-                        </a>
-                    </div>
-                </div>
-                <div class="prt-grid design marketing col-md-4 col-sm-6">
-                    <div class="prt-item">
-                        <a class="expand-img" href="https://vk.me/weltkrieg.group"><img src="assets/img/Games/wld.jpg" alt="image"></a>
-                    </div>
-                </div>
-                <div class="prt-grid marketing web col-md-4 col-sm-6">
-                    <div class="prt-item">
-                        <a class="expand-img" href="https://play.google.com/store/apps/details?id=com.VTeme.BoxColorShot">
-                            <img src="assets/img/Games/4ColorShot.jpg" alt="image">
-                        </a>
-                    </div>
-                </div>
-                <div class="prt-grid col-md-4 col-sm-6">
-                    <div class="prt-item">
-                        <a class="expand-img" href="https://play.google.com/store/apps/details?id=com.DaniilVdovin.Logicalgebra">
-                            <img src="assets/img/Games/LogicAlgebra.png" alt="image">
-                        </a>
-                    </div>
-                </div>
-                <div class="prt-grid design marketing col-md-4 col-sm-6">
-                    <div class="prt-item">
-                        <a class="expand-img" href="https://play.google.com/store/apps/details?id=com.DaniilVdovin.TemporaryTrap">
-                            <img src="assets/img/Games/tmptr.jpg" alt="image">
-                        </a>
-                    </div>
-                </div>
-                <div class="prt-grid web design col-md-4 col-sm-6">
-                    <div class="prt-item">
-                        <a class="expand-img" href="https://play.google.com/store/apps/details?id=com.daniilvdovin.simulatoroffriend">
-                            <img src="assets/img/Games/sim.jpg" alt="image">
-                        </a>
-                    </div>
-                </div>
-                <div class="prt-grid web design col-md-4 col-sm-6">
-                    <div class="prt-item">
-                        <a class="expand-img" href="https://appgallery.cloud.huawei.com/uowap/index.jsp?appName=%D0%A0%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9+%D0%B6%D1%83%D1%80%D0%BD%D0%B0%D0%BB+%D0%B7%D0%B2%D0%BE%D0%BD%D0%BA%D0%BE%D0%B2&logo=https%3A%2F%2Fappimg3.dbankcdn.com%2Fhwmarket%2Ffiles%2Fapplication%2Ficon144%2F10169%2F666a4f6b8dd5478196265d521a1c4e6e.png&desc=Huawei+AppGallery#/detailApp/C101515927?source=appshare&subsource=C101515927">
-                            <img src="assets/img/Games/disvc-02.jpg" alt="image">
-                        </a>
-                    </div>
-                </div>
-                <div class="prt-grid web design col-md-4 col-sm-6">
-                    <div class="prt-item">
-                        <a class="expand-img" href="https://play.google.com/store/apps/details?id=com.daniilvdovin.service_dont_mute">
-                            <img src="assets/img/Games/scrin1_us.jpg" alt="image">
-                        </a>
-                    </div>
-                </div>
-                <div class="prt-grid web design col-md-4 col-sm-6">
-                    <div class="prt-item">
-                        <a class="expand-img" href="https://play.google.com/store/apps/details?id=com.VTeme.AdventureBall">
-                            <img src="assets/img/Games/tablet2.png" alt="image">
-                        </a>
-                    </div>
-                </div>
-                <div class="prt-grid web design col-md-4 col-sm-6">
-                    <div class="prt-item">
-                        <a class="expand-img" href="https://play.google.com/store/apps/details?id=com.mikemarelo.stels.timetableofclasses">
-                            <img src="assets/img/Games/pfurs.jpg" alt="image">
-                        </a>
-                    </div>
-                </div>
-                <div class="prt-grid web design col-md-4 col-sm-6">
-                    <div class="prt-item">
-                        <a class="expand-img" href="https://play.google.com/store/apps/details?id=com.DaniilVdovin.timetableofclassesvpo">
-                            <img src="assets/img/Games/googles.jpg" alt="image">
-                        </a>
-                    </div>
-                </div>
-                <div class="prt-grid web design col-md-4 col-sm-6">
-                    <div class="prt-item">
-                        <a class="expand-img" href="https://appgallery.cloud.huawei.com/marketshare/app/C101188817?locale=ru_RU&source=appshare&subsource=C101188817">
-                            <img src="assets/img/Games/BANER.jpg" alt="image">
-                        </a>
-                    </div>
-                </div>
-                <div class="prt-grid web design col-md-4 col-sm-6">
-                    <div class="prt-item">
-                        <a class="expand-img" href="https://github.com/DaniilVdovin/AndroidChartApp">
-                            <img src="assets/img/Games/cha.jpg" alt="opensorce">
-                        </a>
-                    </div>
-                </div>
-                <div class="prt-grid web design col-md-4 col-sm-6">
-                    <div class="prt-item">
-                        <a class="expand-img" href="https://play.google.com/store/apps/details?id=com.daniilvdovin.EatTown">
-                            <img src="assets/img/Games/doshihaus.jpg" alt="image">
-                        </a>
-                    </div>
-                </div>
-                <div class="prt-grid web design col-md-4 col-sm-6">
-                    <div class="prt-item">
-                        <a class="expand-img" href="https://play.google.com/store/apps/details?id=com.daniilvdovin.fakecall">
-                            <img src="assets/img/Games/fakecall.png" alt="image">
-                        </a>
-                    </div>
-                </div>
+            <div class="ach-grid">
+                <div class="ach-card reveal"><span class="ach-icon">🖥️</span><p data-i18n="ach1">Developer of software included in the State Register of Programs of the Russian Federation</p></div>
+                <div class="ach-card reveal"><span class="ach-icon">🏅</span><p data-i18n="ach2">Winner of the Moscow Exchange hackathon (MOEX) Go.Algo 2023</p></div>
+                <div class="ach-card reveal"><span class="ach-icon">🎖️</span><p data-i18n="ach3">It-Start 2019: winner in the nomination "Best Socially Oriented Project"</p></div>
+                <div class="ach-card reveal"><span class="ach-icon">📱</span><p data-i18n="ach4">Mobile applications with 20,000+ total installations</p></div>
+                <div class="ach-card reveal"><span class="ach-icon">🏗️</span><p data-i18n="ach5">Custom micro-frontend (MFE) for a state procurement ERP: host + independent MFEs, shared component library</p></div>
+                <div class="ach-card reveal"><span class="ach-icon">🤖</span><p data-i18n="ach6">AI agents in the development workflow: multi-agent orchestration, code review, documentation</p></div>
+                <div class="ach-card reveal"><span class="ach-icon">🧠</span><p data-i18n="ach7">vda-memory — a proprietary long-term memory system for AI agents: knowledge entities, facts, relations, cross-session context</p></div>
+                <div class="ach-card reveal"><span class="ach-icon">🎓</span><p data-i18n="ach8">4+ years of university workflow automation in parallel (RUDN University, Sochi)</p></div>
             </div>
-         </div>
-         <div class="container">
-            <div class="section-title">
-                <h2 class="txt2_is_show">My OpenSource</h2>
-            </div>
-            <div class="portfolio-masonary row" id="container">
-                <div class="prt-grid marketing web col-md-4 col-sm-6">
-                    <div class="prt-item">
-                        <a class="expand-img" href="https://github.com/DaniilVdovin/CaseManager">
-                            <img src="assets/img/OpenSoft/CaseManagerSaleBoard.png" alt="image">
-                        </a>
-                    </div>
-                </div>
-                <div class="prt-grid design marketing col-md-4 col-sm-6">
-                    <div class="prt-item">
-                        <a class="expand-img" href="https://github.com/DaniilVdovin/GameServer"><img src="assets/img/Games/wld.jpg" alt="image"></a>
-                    </div>
-                </div>
-                <div class="prt-grid web design col-md-4 col-sm-6">
-                    <div class="prt-item">
-                        <a class="expand-img" href="https://github.com/DaniilVdovin/AndroidChartApp">
-                            <img src="assets/img/Games/cha.jpg" alt="opensorce">
-                        </a>
-                    </div>
-                </div>
-            </div>
-         </div>
-        <div class="white_svg svg_white">
-            <svg x="0px" y="0px" viewBox="0 186.5 1920 113.5">
-                <polygon points="0,300 655.167,210.5 1432.5,300 1920,198.5 1920,300 " />
-            </svg> 
         </div>
     </section>
-    <!-- portfolio area end -->
-    <!-- contact area start -->
-    <section class="contact-area ptb--100" id="contact">
+
+    <!-- Experience -->
+    <section id="experience">
         <div class="container">
-            <div class="section-title">
-                <h2 class="txt2_is_show">Connection with me</h2>
+            <div class="reveal">
+                <div class="sec-label">02</div>
+                <h2 data-i18n="sec_exp">Experience</h2>
             </div>
-            <div class="row">
-                <div class="col-md-5">
-                    <div class="cnt-left">
-                        <ul>
-                            <li>Sochi. Adler district.<span class="ct-break">Россия</span></li>
+            <div class="exp-wrap reveal">
+                <table>
+                    <thead>
+                        <tr>
+                            <th data-i18n="exp_th1">Period</th>
+                            <th data-i18n="exp_th2">Position</th>
+                            <th data-i18n="exp_th3">Highlights</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-i18n="exp1_p">Dec 2023 — present</td>
+                            <td data-i18n="exp1_t">Senior Full-stack Developer · CRKT (Moscow Region)</td>
+                            <td data-i18n="exp1_d">Micro-frontend architecture (host + MFEs, Angular), .NET, full cycle, integrations with government services, role-based access, approvals, document workflow, reporting. AI agents in the team's workflow</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="exp2_p">Jan 2022 — present (in parallel)</td>
+                            <td data-i18n="exp2_t">Lead Programmer · RUDN University, Sochi branch</td>
+                            <td data-i18n="exp2_d">University workflow automation: MMIS, auto scheduling, planning, workload, integrator</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="exp3_p">Jul 2023 — Dec 2023</td>
+                            <td data-i18n="exp3_t">Lead Specialist · Sirius (education digitalization)</td>
+                            <td data-i18n="exp3_d">"Tandem" modules: development, enhancement, new models</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="exp4_p">Aug 2021 — Jan 2022</td>
+                            <td data-i18n="exp4_t">Programmer · RUDN University, Sochi branch</td>
+                            <td data-i18n="exp4_d">Portal and EIOS support, workflow automation, local server administration</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="exp5_p">2020 — 2021</td>
+                            <td data-i18n="exp5_t">Military service</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="exp6_p">Jan 2019 — Jun 2020</td>
+                            <td data-i18n="exp6_t">Computer Center Lab Assistant · RUDN University, Sochi branch</td>
+                            <td data-i18n="exp6_d">Portal support, classroom tech provision, PC assembly/repair, network equipment and cabling, video surveillance, local server</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
 
-                            <li><a href="mailto:stels1040533@gmail.com"><span style="color:GrayText; font-size:16px;">stels1040533@gmail.com,  </span></a><a href="mailto:danil.vdovin00@yandex.ru"><span style="color:GrayText; font-size:16px;">danil.vdovin00@yandex.ru</span></a></li>
-
-                            <li>+7 (918) 104-05-33</li>
-                            <li>
-                                <a href='https://play.google.com/store/apps/dev?id=4680159475815121969&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
-                                    <img width="150" class="googleplay" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' />
-                                </a>
-                            </li>
-
-                        </ul>
-                        <div class="social-link">
-                            <h5>Contants :</h5>
-                            <a href="https://www.facebook.com/profile.php?id=100005186350219"><i class="fa fa-facebook"></i></a>
-                            <a href="https://twitter.com/v_teme_YouTube"><i class="fa fa-twitter"></i></a>
-                            <a href="https://github.com/DaniilVdovin"><i class="fa fa-github"></i></a>
-                            <a href="https://www.instagram.com/mike_marelo/"><i class="fa fa-instagram"></i></a>
-                        </div>
-                        
-                    </div>
+    <!-- Stack -->
+    <section id="stack">
+        <div class="container">
+            <div class="reveal">
+                <div class="sec-label">03</div>
+                <h2 data-i18n="sec_stack">Stack</h2>
+            </div>
+            <div class="stack-group reveal">
+                <h3 data-i18n="stack_cur">Current</h3>
+                <div class="chips">
+                    <span class="chip"><i style="background:#68217a"></i>C#</span>
+                    <span class="chip"><i style="background:#5C2D91"></i>.NET</span>
+                    <span class="chip"><i style="background:#8A63D2"></i>ASP.NET Core</span>
+                    <span class="chip"><i style="background:#68B4CF"></i>Entity Framework</span>
+                    <span class="chip"><i style="background:#DD0031"></i>Angular</span>
+                    <span class="chip"><i style="background:#3178C6"></i>TypeScript</span>
+                    <span class="chip"><i style="background:#F7DF1E"></i>JavaScript</span>
+                    <span class="chip"><i style="background:#CC2927"></i>SQL Server</span>
+                    <span class="chip"><i style="background:#316192"></i>PostgreSQL</span>
+                    <span class="chip"><i style="background:#2496ED"></i>Docker</span>
+                    <span class="chip"><i style="background:#F05033"></i>Git</span>
+                    <span class="chip"><i style="background:#CC0000"></i>Redmine</span>
                 </div>
-                <div class="col-md-7">
-                    <div class="">
-                        <img src="images/tbc.jpg">
-                    </div>
+            </div>
+            <div class="stack-group reveal">
+                <h3 data-i18n="stack_per">Also / personal projects</h3>
+                <div class="chips">
+                    <span class="chip"><i style="background:#3670A0"></i>Python</span>
+                    <span class="chip"><i style="background:#ED8B00"></i>Java</span>
+                    <span class="chip"><i style="background:#3DDC84"></i>Android</span>
+                    <span class="chip"><i style="background:#61DAFB"></i>React</span>
+                    <span class="chip"><i style="background:#6DA55F"></i>Node.js</span>
+                    <span class="chip"><i style="background:#8f8f8f"></i>Unity</span>
+                    <span class="chip"><i style="background:#F5792A"></i>Blender</span>
+                    <span class="chip"><i style="background:#FFCD34"></i>Firebase</span>
+                    <span class="chip"><i style="background:#4285F4"></i>Google Cloud</span>
+                    <span class="chip"><i style="background:#07405E"></i>SQLite</span>
+                    <span class="chip"><i style="background:#5391FE"></i>PowerShell</span>
+                    <span class="chip"><i style="background:#FCC624"></i>Linux</span>
                 </div>
             </div>
         </div>
     </section>
-    <!-- contact area end -->
-    <!-- footer area start -->
-    <footer>
-        <div class="footer-area bg-gray">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-6 col-sm-4">
-                        <div class="flogo">
-                            <a href="index.html"><img src="assets/img/icon/m-icon-dark.png" alt="logo"></a>
-                        </div>
 
-                    </div>
-                        <div class="col-md-6 col-sm-8">
-                            <div class="copyright">
-                                <p>@Copyleft by <span>m4r5h411</span></p>
-                                <p>Google Play and the Google Play logo are trademarks of Google LLC</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="go-to-top">
-                        <a href="#top"><i class="fa fa-angle-up"></i></a>
-                    </div>
+    <!-- Projects -->
+    <section id="projects">
+        <div class="container">
+            <div class="reveal">
+                <div class="sec-label">04</div>
+                <div class="os-head">
+                    <h2 data-i18n="sec_os">Open Source</h2>
+                    <span class="os-badge" data-i18n="os_badge">50+ open projects</span>
                 </div>
+            </div>
+            <div class="os-grid">
+                <a class="os-card reveal" href="https://github.com/DaniilVdovin/ComfySharpSDK" target="_blank" rel="noopener">
+                    <span class="os-name">ComfySharpSDK</span>
+                    <p data-i18n="os1">C# SDK for ComfyUI with a workflow runner</p>
+                    <span class="os-link">GitHub →</span>
+                </a>
+                <a class="os-card reveal" href="https://github.com/DaniilVdovin/ComfyUI-prompt-templating" target="_blank" rel="noopener">
+                    <span class="os-name">ComfyUI-prompt-templating</span>
+                    <p data-i18n="os2">ComfyUI custom nodes for prompt templating</p>
+                    <span class="os-link">GitHub →</span>
+                </a>
+                <a class="os-card reveal" href="https://github.com/DaniilVdovin/SSRFGuard" target="_blank" rel="noopener">
+                    <span class="os-name">SSRFGuard</span>
+                    <p data-i18n="os3">Lightweight SSRF protection for HttpClient in .NET microservices</p>
+                    <span class="os-link">GitHub →</span>
+                </a>
+                <a class="os-card reveal" href="https://github.com/DaniilVdovin/CsvOutputFormatter" target="_blank" rel="noopener">
+                    <span class="os-name">CsvOutputFormatter</span>
+                    <p data-i18n="os4">CSV output formatter for .NET 10 Web API</p>
+                    <span class="os-link">GitHub →</span>
+                </a>
+                <a class="os-card reveal" href="https://github.com/DaniilVdovin/VK_MAX_ScheduleSDK" target="_blank" rel="noopener">
+                    <span class="os-name">VK_MAX_ScheduleSDK</span>
+                    <p data-i18n="os5">C# SDK for the VK Apps/Max Bot API</p>
+                    <span class="os-link">GitHub →</span>
+                </a>
+                <a class="os-card reveal" href="https://github.com/DaniilVdovin/GameServer" target="_blank" rel="noopener">
+                    <span class="os-name">GameServer</span>
+                    <p data-i18n="os6">C# game server and client</p>
+                    <span class="os-link">GitHub →</span>
+                </a>
+            </div>
+
+            <div class="reveal" style="margin-top: 56px;">
+                <div class="sec-label">05</div>
+                <h2 data-i18n="sec_sel">Selected projects</h2>
+                <p class="sec-note" data-i18n="sel_note">Private work projects — names and screenshots only, details under NDA.</p>
+            </div>
+            <div class="pp-masonry uniform">
+                <div class="pp-card static reveal"><span class="pp-tag">Госреестр ПО РФ</span><img src="assets/AWP/2.png" alt="АРМ Диспетчер ОУ" loading="lazy"><span class="pp-name"><b>АРМ «Диспетчер ОУ»</b><i>University schedule manager</i></span></div>
+                <div class="pp-card static reveal"><img src="assets/TT/trading-terminal.png" alt="TradingTerminal" loading="lazy"><span class="pp-name"><b>TradingTerminal</b><i>Automated trading terminal</i></span></div>
+                <div class="pp-card static reveal"><img src="assets/ERP/erp.png" alt="ERP" loading="lazy"><span class="pp-name"><b>ERP</b><i>MFE core</i></span></div>
+                <div class="pp-card static reveal"><img src="assets/PFURCore/pfurcore.png" alt="PFURCore" loading="lazy"><span class="pp-name"><b>PFURCore</b><i>Modular university API service</i></span></div>
+                <div class="pp-card static reveal"><img src="assets/RUDNReports/rudnreports.png" alt="RUDNReports" loading="lazy"><span class="pp-name"><b>RUDNReports</b><i>Dynamic report generation system</i></span></div>
+            </div>
+
+            <div class="reveal" style="margin-top: 56px;">
+                <div class="sec-label">06</div>
+                <h2 data-i18n="sec_pp">Personal projects</h2>
+            </div>
+            <div class="pp-masonry">
+                <a class="pp-card reveal" href="https://play.google.com/store/apps/details?id=com.daniilvdovin.wowmap" target="_blank" rel="noopener"><img src="assets/img/Games/sale11Kdonwloads.jpg" alt="WowMap" loading="lazy"><span class="pp-name"><b>WowMap</b><i>11k+ installs</i></span></a>
+                <a class="pp-card reveal" href="https://github.com/DaniilVdovin/CaseManager" target="_blank" rel="noopener"><img src="assets/img/OpenSoft/CaseManagerSaleBoard.png" alt="CaseManager" loading="lazy"><span class="pp-name">CaseManager</span></a>
+                <a class="pp-card reveal" href="https://play.google.com/store/apps/details?id=com.DefaultCompany.play2d" target="_blank" rel="noopener"><img src="assets/img/Games/orbitalshyter.png" alt="Orbital Shyter" loading="lazy"><span class="pp-name">Orbital Shyter</span></a>
+                <a class="pp-card reveal" href="https://apps.rustore.ru/app/com.daniilvdovin.pixelit" target="_blank" rel="noopener"><img src="assets/img/OpenSoft/pixeling.png" alt="Pixeling" loading="lazy"><span class="pp-name">Pixeling</span></a>
+                <a class="pp-card reveal" href="https://play.google.com/store/apps/details?id=com.daniilvdovin.iswork" target="_blank" rel="noopener"><img src="assets/img/Games/itswork.png" alt="IsWork" loading="lazy"><span class="pp-name">IsWork</span></a>
+                <a class="pp-card reveal" href="https://vk.me/weltkrieg.group" target="_blank" rel="noopener"><img src="assets/img/Games/wld.jpg" alt="World War" loading="lazy"><span class="pp-name">World War</span></a>
+                <a class="pp-card reveal" href="https://play.google.com/store/apps/details?id=com.VTeme.BoxColorShot" target="_blank" rel="noopener"><img src="assets/img/Games/4ColorShot.jpg" alt="4ColorShot" loading="lazy"><span class="pp-name">4ColorShot</span></a>
+                <a class="pp-card reveal" href="https://play.google.com/store/apps/details?id=com.DaniilVdovin.Logicalgebra" target="_blank" rel="noopener"><img src="assets/img/Games/LogicAlgebra.png" alt="Logicalgebra" loading="lazy"><span class="pp-name">Logicalgebra</span></a>
+                <a class="pp-card reveal" href="https://play.google.com/store/apps/details?id=com.DaniilVdovin.TemporaryTrap" target="_blank" rel="noopener"><img src="assets/img/Games/tmptr.jpg" alt="TemporaryTrap" loading="lazy"><span class="pp-name">TemporaryTrap</span></a>
+                <a class="pp-card reveal" href="https://play.google.com/store/apps/details?id=com.daniilvdovin.simulatoroffriend" target="_blank" rel="noopener"><img src="assets/img/Games/sim.jpg" alt="Simulator of Friend" loading="lazy"><span class="pp-name">Simulator of Friend</span></a>
+                <a class="pp-card reveal" href="https://appgallery.cloud.huawei.com/uowap/index.jsp?appName=%D0%A0%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9+%D0%B6%D1%83%D1%80%D0%BD%D0%B0%D0%BB+%D0%B7%D0%B2%D0%BE%D0%BD%D0%BA%D0%BE%D0%B2&logo=https%3A%2F%2Fappimg3.dbankcdn.com%2Fhwmarket%2Ffiles%2Fapplication%2Ficon144%2F10169%2F666a4f6b8dd5478196265d521a1c4e6e.png&desc=Huawei+AppGallery#/detailApp/C101515927?source=appshare&subsource=C101515927" target="_blank" rel="noopener"><img src="assets/img/Games/disvc-02.jpg" alt="Phone Journal" loading="lazy"><span class="pp-name">Phone Journal</span></a>
+                <a class="pp-card reveal" href="https://play.google.com/store/apps/details?id=com.daniilvdovin.service_dont_mute" target="_blank" rel="noopener"><img src="assets/img/Games/scrin1_us.jpg" alt="DontMute" loading="lazy"><span class="pp-name">DontMute</span></a>
+                <a class="pp-card reveal" href="https://play.google.com/store/apps/details?id=com.VTeme.AdventureBall" target="_blank" rel="noopener"><img src="assets/img/Games/tablet2.png" alt="AdventureBall" loading="lazy"><span class="pp-name">AdventureBall</span></a>
+                <a class="pp-card reveal" href="https://play.google.com/store/apps/details?id=com.mikemarelo.stels.timetableofclasses" target="_blank" rel="noopener"><img src="assets/img/Games/pfurs.jpg" alt="Timetable of Classes" loading="lazy"><span class="pp-name">Timetable of Classes</span></a>
+                <a class="pp-card reveal" href="https://play.google.com/store/apps/details?id=com.DaniilVdovin.timetableofclassesvpo" target="_blank" rel="noopener"><img src="assets/img/Games/googles.jpg" alt="Timetable of Classes VPO" loading="lazy"><span class="pp-name">Timetable of Classes VPO</span></a>
+                <a class="pp-card reveal" href="https://play.google.com/store/apps/details?id=com.daniilvdovin.EatTown" target="_blank" rel="noopener"><img src="assets/img/Games/doshihaus.jpg" alt="EatTown" loading="lazy"><span class="pp-name">EatTown</span></a>
+                <a class="pp-card reveal" href="https://play.google.com/store/apps/details?id=com.daniilvdovin.fakecall" target="_blank" rel="noopener"><img src="assets/img/Games/fakecall.png" alt="FakeCall" loading="lazy"><span class="pp-name">FakeCall</span></a>
+                <a class="pp-card reveal" href="https://github.com/DaniilVdovin/AndroidChartApp" target="_blank" rel="noopener"><img src="assets/img/Games/cha.jpg" alt="AndroidChartApp" loading="lazy"><span class="pp-name">AndroidChartApp</span></a>
+                <a class="pp-card reveal" href="https://github.com/DaniilVdovin/Arm-Controller" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/DaniilVdovin/Arm-Controller/HEAD/image.png" alt="Arm-Controller" loading="lazy"><span class="pp-name"><b>Arm-Controller</b><i>Unity robotic arm</i></span></a>
+                <a class="pp-card reveal" href="https://github.com/DaniilVdovin/GO.ALGO.Neuro" target="_blank" rel="noopener"><img src="https://github.com/DaniilVdovin/GO.ALGO.Neuro/assets/45402557/bb338dc8-5339-48c7-b985-914ef7bb5447" alt="GO.ALGO.Neuro" loading="lazy"><span class="pp-name"><b>GO.ALGO.Neuro</b><i>MOEX hackathon</i></span></a>
+                <a class="pp-card reveal" href="https://github.com/DaniilVdovin/sJGE" target="_blank" rel="noopener"><img src="https://github.com/DaniilVdovin/sJGE/assets/114388311/1ac5576d-aabe-452a-9226-9d13edaef282" alt="sJGE" loading="lazy"><span class="pp-name"><b>sJGE</b><i>Java game engine</i></span></a>
+                <a class="pp-card reveal" href="https://github.com/DaniilVdovin/CreateLevel_C-" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/DaniilVdovin/CreateLevel_C-/HEAD/Screenshot_20180717-153245.jpg" alt="CreateLevel_C-" loading="lazy"><span class="pp-name"><b>CreateLevel_C-</b><i>level generator</i></span></a>
+                <a class="pp-card reveal" href="https://github.com/DaniilVdovin/espidf-esp32-c6-to-gm861" target="_blank" rel="noopener"><img src="https://github.com/user-attachments/assets/3b9b8583-70c7-4d49-ae7f-bf99c5d012cc" alt="espidf-esp32-c6-to-gm861" loading="lazy"><span class="pp-name"><b>ESP32-C6 + GM861</b><i>barcode scanner</i></span></a>
+                <a class="pp-card reveal" href="https://github.com/DaniilVdovin/flutter_generate_uuid" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/DaniilVdovin/flutter_generate_uuid/HEAD/screenshot/back.png" alt="flutter_generate_uuid" loading="lazy"><span class="pp-name"><b>flutter_generate_uuid</b><i>Flutter package</i></span></a>
+                <a class="pp-card reveal" href="https://github.com/DaniilVdovin/UnityAnythingMove" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/DaniilVdovin/UnityAnythingMove/HEAD/ZDPMa9S1ZF4%5B1%5D.jpg" alt="UnityAnythingMove" loading="lazy"><span class="pp-name"><b>UnityAnythingMove</b><i>Unity</i></span></a>
+                <a class="pp-card reveal" href="https://github.com/DaniilVdovin/WoWRaider" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/DaniilVdovin/WoWRaider/HEAD/IconKitchen-WowRaider/ScreenAndSale/WowraiderSale.png" alt="WoWRaider" loading="lazy"><span class="pp-name"><b>WoWRaider</b><i>Raider.IO client</i></span></a>
+            </div>
+
+            <div class="reveal" style="margin-top: 56px;">
+                <div class="sec-label">07</div>
+                <h2 data-i18n="sec_certs">Certificates</h2>
+                <details class="certs">
+                    <summary data-i18n="certs_open">Show certificates</summary>
+                    <ul class="cert-list">
+                        <li><b>Rostelecom</b> — IT project management (2025) · <a href="https://github.com/DaniilVdovin/DaniilVdovin/blob/main/242061fa-3ed9-47e5-824e-f5c5f1431677.pdf" target="_blank" rel="noopener">PDF</a></li>
+                        <li><b>MOEX Go.Algo</b> — hackathon winner (2023) · <a href="https://github.com/DaniilVdovin/DaniilVdovin/blob/main/Certificate_2023-12-18_15_36_42.730Z.pdf" target="_blank" rel="noopener">PDF</a></li>
+                        <li><b>MIREA</b> (Russian Technological University) · <a href="https://stepik.org/certificate/9c7ddcd1f62aa7760706b8bddebbb244d85328c7.pdf" target="_blank" rel="noopener">PDF</a></li>
+                        <li><b>RUDN</b> · <a href="https://stepik.org/certificate/66c7e3d38b3016189765f9927a7ee494e073744d.pdf" target="_blank" rel="noopener">PDF</a></li>
+                        <li><b>RUDN</b> · <a href="https://stepik.org/certificate/d6a7937310f2eb17eb7bd570948822972ed2c48f.pdf" target="_blank" rel="noopener">PDF</a></li>
+                        <li><b>Omsk State Technical University</b> · <a href="https://stepik.org/certificate/372dfc97cc6a0e382cdb9485b9bed4c56acb7876.pdf" target="_blank" rel="noopener">PDF</a></li>
+                        <li><b>proglib</b> · <a href="https://stepik.org/certificate/ce789bdaea714ddf0846a4b919a8c03da2e659f3.pdf" target="_blank" rel="noopener">PDF</a></li>
+                        <li><b>Mail.ru Group</b> · <a href="https://stepik.org/certificate/1ed06b1a7127ed5daa90ed5177fcd59ee1f5e14f.pdf" target="_blank" rel="noopener">PDF</a></li>
+                    </ul>
+                </details>
+            </div>
         </div>
-    </footer>
-    <!-- footer area end -->
-    <!-- jquery latest version -->
-    <script src="assets/js/vendor/jquery-3.2.0.min.js"></script>
-    <!-- bootstrap 4 js -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <!-- others plugins -->
-    <script src="assets/js/jquery.slicknav.min.js"></script>
-    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <script src="assets/js/plugins.js"></script>
-    <script src="assets/js/scripts.js"></script>
-    <script src="assets/js/circle.js"></script>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <div class="reveal">
+                <div class="sec-label">08</div>
+                <h2 data-i18n="sec_contact">Contact</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card reveal">
+                    <span class="cc-label">Location</span>
+                    <span class="cc-value" data-i18n="contact_loc">Sochi, Russia</span>
+                </div>
+                <div class="contact-card reveal">
+                    <span class="cc-label">GitHub</span>
+                    <a href="https://github.com/DaniilVdovin" target="_blank" rel="noopener">github.com/DaniilVdovin</a>
+                </div>
+                <div class="contact-card reveal">
+                    <span class="cc-label">Telegram</span>
+                    <a href="https://t.me/mikemarelo" target="_blank" rel="noopener">@mikemarelo</a>
+                </div>
+                <div class="contact-card reveal">
+                    <span class="cc-label">GitHub Profile</span>
+                    <a href="https://github.com/DaniilVdovin" target="_blank" rel="noopener">README (EN / RU)</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container" data-i18n="footer">© 2026 Daniil Vdovin</div>
+</footer>
+
+<script>
+const I18N = {
+    en: {
+        nav_ach: "Achievements", nav_exp: "Experience", nav_stack: "Stack", nav_projects: "Projects", nav_contact: "Contact",
+        hero_role: "Senior Full-stack Developer (C#/.NET, Angular)",
+        hero_p1: "Full-stack developer with <span class=\"hl\">7+ years</span> of experience in large-scale enterprise systems.",
+        hero_p2: "Currently: <span class=\"hl\">micro-frontend platform</span> for a state procurement ERP (Moscow Region) — host + independent MFEs (Angular), .NET BFF, integrations with government services.",
+        hero_p3: "<span class=\"hl\">Full development cycle</span>: from data model and business logic to UI.",
+        hero_p4: "Building <span class=\"hl\">internal tooling</span> for the team: shared component libraries, templates, agent skills and MCP tools.",
+        hero_p5: "Bringing <span class=\"hl\">AI agents</span> into the development workflow: task orchestration, code review, documentation.",
+        stat_years: "years",
+        stat_projects: "projects",
+        stat_open: "open projects",
+        stat_certs: "certificates",
+        btn_contact: "Contact",
+        sec_ach: "Key Achievements",
+        ach1: "Developer of software included in the State Register of Programs of the Russian Federation",
+        ach2: "Winner of the Moscow Exchange hackathon (MOEX) Go.Algo 2023",
+        ach3: 'It-Start 2019: winner in the nomination "Best Socially Oriented Project"',
+        ach4: "Mobile applications with 20,000+ total installations",
+        ach5: "Custom micro-frontend (MFE) for a state procurement ERP: host + independent MFEs, shared component library",
+        ach6: "AI agents in the development workflow: multi-agent orchestration, code review, documentation",
+        ach7: "vda-memory — a proprietary long-term memory system for AI agents: knowledge entities, facts, relations, cross-session context",
+        ach8: "4+ years of university workflow automation in parallel (RUDN University, Sochi)",
+        sec_exp: "Experience",
+        exp_th1: "Period", exp_th2: "Position", exp_th3: "Highlights",
+        exp1_p: "Dec 2023 — present",
+        exp1_t: "Senior Full-stack Developer · CRKT (Moscow Region)",
+        exp1_d: "Micro-frontend architecture (host + MFEs, Angular), .NET, full cycle, integrations with government services, role-based access, approvals, document workflow, reporting. AI agents in the team's workflow",
+        exp2_p: "Jan 2022 — present (in parallel)",
+        exp2_t: "Lead Programmer · RUDN University, Sochi branch",
+        exp2_d: "University workflow automation: MMIS, auto scheduling, planning, workload, integrator",
+        exp3_p: "Jul 2023 — Dec 2023",
+        exp3_t: "Lead Specialist · Sirius (education digitalization)",
+        exp3_d: '"Tandem" modules: development, enhancement, new models',
+        exp4_p: "Aug 2021 — Jan 2022",
+        exp4_t: "Programmer · RUDN University, Sochi branch",
+        exp4_d: "Portal and EIOS support, workflow automation, local server administration",
+        exp5_p: "2020 — 2021",
+        exp5_t: "Military service",
+        exp6_p: "Jan 2019 — Jun 2020",
+        exp6_t: "Computer Center Lab Assistant · RUDN University, Sochi branch",
+        exp6_d: "Portal support, classroom tech provision, PC assembly/repair, network equipment and cabling, video surveillance, local server",
+        sec_stack: "Stack",
+        stack_cur: "Current",
+        stack_per: "Also / personal projects",
+        sec_os: "Open Source",
+        os_badge: "50+ open projects",
+        os1: "C# SDK for ComfyUI with a workflow runner",
+        os2: "ComfyUI custom nodes for prompt templating",
+        os3: "Lightweight SSRF protection for HttpClient in .NET microservices",
+        os4: "CSV output formatter for .NET 10 Web API",
+        os5: "C# SDK for the VK Apps/Max Bot API",
+        os6: "C# game server and client",
+        sec_pp: "Personal projects",
+        sec_sel: "Selected projects",
+        sel_note: "Private work projects — names and screenshots only, details under NDA.",
+        sec_certs: "Certificates",
+        certs_open: "Show certificates",
+        sec_contact: "Contact",
+        contact_loc: "Sochi, Russia · open to remote",
+        footer: "© 2026 Daniil Vdovin"
+    },
+    ru: {
+        nav_ach: "Достижения", nav_exp: "Опыт", nav_stack: "Стек", nav_projects: "Проекты", nav_contact: "Контакты",
+        hero_role: "Senior Full-stack разработчик (C#/.NET, Angular)",
+        hero_p1: "Full-stack разработчик, <span class=\"hl\">7+ лет</span> в крупных корпоративных системах.",
+        hero_p2: "Сейчас: <span class=\"hl\">микрофронтенд-платформа</span> для ERP госзакупок (Московская область) — хост + независимые MFE (Angular), .NET BFF, интеграции с государственными сервисами.",
+        hero_p3: "<span class=\"hl\">Полный цикл разработки</span>: от модели данных и бизнес-логики до UI.",
+        hero_p4: "<span class=\"hl\">Внутренние инструменты</span> для команды: общие библиотеки компонентов, шаблоны, навыки для агентов, MCP-инструменты.",
+        hero_p5: "Внедряю <span class=\"hl\">ИИ-агентов</span> в цикл разработки: оркестрация задач, code review, документация.",
+        stat_years: "лет",
+        stat_projects: "проектов",
+        stat_open: "открытых проектов",
+        stat_certs: "сертификатов",
+        btn_contact: "Контакты",
+        sec_ach: "Ключевые достижения",
+        ach1: "Разработчик ПО, включённого в Государственный реестр программ РФ",
+        ach2: "Победитель хакатона Московской биржи (MOEX) Go.Algo 2023",
+        ach3: "It-Start 2019: победитель в номинации «Лучший социально ориентированный проект»",
+        ach4: "Мобильные приложения с 20 000+ установок суммарно",
+        ach5: "Кастомный микрофронтенд (MFE) для ERP госзакупок: хост + независимые MFE, общая библиотека компонентов",
+        ach6: "ИИ-агенты в цикле разработки: мультиагентная оркестрация, code review, документация",
+        ach7: "vda-memory — собственная система долговременной памяти для ИИ-агентов: сущности знаний, факты, связи, контекст между сессиями",
+        ach8: "4+ года автоматизации рабочих процессов вуза параллельно (РУДН, Сочинский филиал)",
+        sec_exp: "Опыт",
+        exp_th1: "Период", exp_th2: "Позиция", exp_th3: "Детали",
+        exp1_p: "Дек 2023 — сейчас",
+        exp1_t: "Senior Full-stack разработчик · ЦРКТ (Московская область)",
+        exp1_d: "Микрофронтенд-архитектура (хост + MFE, Angular), .NET, полный цикл, интеграции с госсервисами, ролевая модель доступа, согласования, документооборот, отчётность. ИИ-агенты в рабочем процессе команды",
+        exp2_p: "Янв 2022 — сейчас (параллельно)",
+        exp2_t: "Ведущий программист · РУДН, Сочинский филиал",
+        exp2_d: "Автоматизация рабочих процессов вуза: ММИС, АВТОРасписание, ПЛАНЫ, нагрузка, интегратор",
+        exp3_p: "Июл 2023 — Дек 2023",
+        exp3_t: "Ведущий специалист · «Сириус» (цифровизация образования)",
+        exp3_d: "Модули «Тандем»: разработка, доработка, новые модели",
+        exp4_p: "Авг 2021 — Янв 2022",
+        exp4_t: "Программист · РУДН, Сочинский филиал",
+        exp4_d: "Поддержка портала и ЭИОС, автоматизация рабочих процессов, администрирование локального сервера",
+        exp5_p: "2020 — 2021",
+        exp5_t: "Служба в армии",
+        exp6_p: "Янв 2019 — Июн 2020",
+        exp6_t: "Лаборант компьютерного центра · РУДН, Сочинский филиал",
+        exp6_d: "Поддержка портала, техобеспечение аудиторий, сборка/ремонт ПК, сетевое оборудование и кабельная инфраструктура, видеонаблюдение, локальный сервер",
+        sec_stack: "Стек",
+        stack_cur: "Текущий",
+        stack_per: "Также / личные проекты",
+        sec_os: "Open Source",
+        os_badge: "50+ открытых проектов",
+        os1: "C# SDK для ComfyUI с workflow runner",
+        os2: "Кастом-ноды ComfyUI для prompt-templating",
+        os3: "Лёгкая SSRF-защита для HttpClient в .NET-микросервисах",
+        os4: "CSV-форматтер вывода для .NET 10 Web API",
+        os5: "C# SDK для VK Apps/Max Bot API",
+        os6: "C# игровой сервер и клиент",
+        sec_pp: "Личные проекты",
+        sec_sel: "Избранные проекты",
+        sel_note: "Приватные рабочие проекты — только названия и скриншоты, детали под NDA.",
+        sec_certs: "Сертификаты",
+        certs_open: "Показать сертификаты",
+        sec_contact: "Контакты",
+        contact_loc: "Сочи, Россия · открыт к удалёнке",
+        footer: "© 2026 Даниил Вдовин"
+    }
+};
+
+let lang = localStorage.getItem('lang') || 'en';
+
+function applyLang(l) {
+    lang = l;
+    localStorage.setItem('lang', l);
+    document.documentElement.lang = l;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const k = el.getAttribute('data-i18n');
+        if (I18N[l][k] !== undefined) {
+            if (el.hasAttribute('data-i18n-html')) el.innerHTML = I18N[l][k];
+            else el.textContent = I18N[l][k];
+        }
+    });
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === l));
+}
+
+document.querySelectorAll('.lang-btn').forEach(b =>
+    b.addEventListener('click', () => applyLang(b.dataset.lang))
+);
+applyLang(lang);
+
+const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+document.querySelectorAll('.hero-stat b').forEach(el => {
+    const target = parseInt(el.dataset.target, 10);
+    const suffix = el.dataset.suffix || '';
+    const dur = 1400, t0 = performance.now();
+    (function tick(now) {
+        const p = Math.min((now - t0) / dur, 1);
+        el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+    })(t0);
+});
+</script>
+
 </body>
-
 </html>
